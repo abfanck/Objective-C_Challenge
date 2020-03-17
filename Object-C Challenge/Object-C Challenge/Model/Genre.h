@@ -1,5 +1,5 @@
 //
-//  Networking.h
+//  Genre.h
 //  Object-C Challenge
 //
 //  Created by Marcus Vinicius Vieira Badiale on 17/03/20.
@@ -9,10 +9,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Networking : NSObject
+@interface Genre : NSObject
 
--(void)fetchMovieGenre:(NSNumber *)movieId;
--(void)fetchMovie:(BOOL *)isPopularMovie;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSNumber *genreId;
 
 @end
 

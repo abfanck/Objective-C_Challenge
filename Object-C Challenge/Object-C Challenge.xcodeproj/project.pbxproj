@@ -16,6 +16,7 @@
 		AAD0407B241FF49E0025628C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD0407A241FF49E0025628C /* main.m */; };
 		AB751F0924213843009A9BB2 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F0824213843009A9BB2 /* Networking.m */; };
 		AB751F0D24214C51009A9BB2 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F0C24214C51009A9BB2 /* Movie.m */; };
+		AB751F112421538E009A9BB2 /* Genre.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F102421538E009A9BB2 /* Genre.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		AB751F0824213843009A9BB2 /* Networking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
 		AB751F0B24214C51009A9BB2 /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		AB751F0C24214C51009A9BB2 /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		AB751F0F2421538E009A9BB2 /* Genre.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Genre.h; sourceTree = "<group>"; };
+		AB751F102421538E009A9BB2 /* Genre.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Genre.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 			children = (
 				AB751F0B24214C51009A9BB2 /* Movie.h */,
 				AB751F0C24214C51009A9BB2 /* Movie.m */,
+				AB751F0F2421538E009A9BB2 /* Genre.h */,
+				AB751F102421538E009A9BB2 /* Genre.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB751F0D24214C51009A9BB2 /* Movie.m in Sources */,
+				AB751F112421538E009A9BB2 /* Genre.m in Sources */,
 				AAD04070241FF49B0025628C /* ViewController.m in Sources */,
 				AB751F0924213843009A9BB2 /* Networking.m in Sources */,
 				AAD0406A241FF49B0025628C /* AppDelegate.m in Sources */,
