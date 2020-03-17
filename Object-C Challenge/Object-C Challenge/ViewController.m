@@ -26,7 +26,6 @@
     
 //  Isso em baixo é como se chama a funcao da classe
 //    [_networking fetchMovieGenre: [NSNumber numberWithInt:(475557)]];
-//    [_networking fetchMovie2:YES];
 }
 
 
