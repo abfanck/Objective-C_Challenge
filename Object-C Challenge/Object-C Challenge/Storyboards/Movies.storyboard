@@ -5,79 +5,73 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SF-Pro-Text-Regular.otf">
-            <string>SFProText-Regular</string>
-        </array>
-        <array key="SF-Pro-Text-Semibold.otf">
-            <string>SFProText-Semibold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Movies-->
         <scene sceneID="INz-am-XxK">
             <objects>
                 <tableViewController id="Eao-HS-9m9" customClass="MoviesTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="121" estimatedRowHeight="121" sectionHeaderHeight="21" sectionFooterHeight="21" id="uod-fd-7Gd">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="138" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="35" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="uod-fd-7Gd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" id="dGY-Gg-JjU" customClass="MoviesTableViewCell">
-                                <rect key="frame" x="0.0" y="55.5" width="414" height="121"/>
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="138"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dGY-Gg-JjU" id="Exp-E2-FsP">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="121"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="138"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0QD-Lt-caX">
-                                            <rect key="frame" x="15" y="1" width="79" height="119"/>
+                                            <rect key="frame" x="15" y="5" width="87" height="130.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="0QD-Lt-caX" secondAttribute="height" multiplier="79:118" id="3d7-zU-ppd"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xre-ZA-sji">
-                                            <rect key="frame" x="104" y="11" width="34.5" height="17"/>
-                                            <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="14"/>
+                                            <rect key="frame" x="112" y="11" width="37" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsA-r8-WzI">
-                                            <rect key="frame" x="104" y="38" width="32" height="15.5"/>
-                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="13"/>
+                                            <rect key="frame" x="112" y="36" width="33" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="dFL-np-fab">
-                                            <rect key="frame" x="104" y="98" width="13" height="13"/>
+                                            <rect key="frame" x="112" y="111" width="14.5" height="14.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="dFL-np-fab" secondAttribute="height" multiplier="1:1" id="Oxh-bz-Evd"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9w-ZB-38O">
-                                            <rect key="frame" x="122" y="97.5" width="29.5" height="14"/>
-                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                                            <rect key="frame" x="131.5" y="111" width="31" height="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="0QD-Lt-caX" secondAttribute="bottom" constant="1" id="65U-Wl-1bl"/>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="xre-ZA-sji" secondAttribute="trailing" constant="15" id="8Kp-7i-Scf"/>
                                         <constraint firstItem="CsA-r8-WzI" firstAttribute="leading" secondItem="0QD-Lt-caX" secondAttribute="trailing" constant="10" id="D3H-xT-sjq"/>
-                                        <constraint firstItem="CsA-r8-WzI" firstAttribute="top" secondItem="xre-ZA-sji" secondAttribute="bottom" constant="10" id="HsA-aP-QKe"/>
-                                        <constraint firstItem="dFL-np-fab" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CsA-r8-WzI" secondAttribute="bottom" constant="17" id="I8A-Tm-rz1"/>
+                                        <constraint firstItem="CsA-r8-WzI" firstAttribute="top" secondItem="xre-ZA-sji" secondAttribute="bottom" constant="8" id="HsA-aP-QKe"/>
+                                        <constraint firstItem="dFL-np-fab" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CsA-r8-WzI" secondAttribute="bottom" constant="10" id="I8A-Tm-rz1"/>
                                         <constraint firstItem="L9w-ZB-38O" firstAttribute="leading" secondItem="dFL-np-fab" secondAttribute="trailing" constant="5" id="NgI-Hn-L4X"/>
                                         <constraint firstItem="dFL-np-fab" firstAttribute="leading" secondItem="0QD-Lt-caX" secondAttribute="trailing" constant="10" id="QBX-uZ-M5z"/>
                                         <constraint firstItem="L9w-ZB-38O" firstAttribute="centerY" secondItem="dFL-np-fab" secondAttribute="centerY" id="UA2-Dg-DiJ"/>
                                         <constraint firstItem="xre-ZA-sji" firstAttribute="leading" secondItem="0QD-Lt-caX" secondAttribute="trailing" constant="10" id="a4C-YT-ZRM"/>
-                                        <constraint firstItem="0QD-Lt-caX" firstAttribute="top" secondItem="Exp-E2-FsP" secondAttribute="top" constant="1" id="aaP-LB-hDI"/>
+                                        <constraint firstItem="0QD-Lt-caX" firstAttribute="top" secondItem="Exp-E2-FsP" secondAttribute="top" constant="5" id="aaP-LB-hDI"/>
                                         <constraint firstItem="0QD-Lt-caX" firstAttribute="leading" secondItem="Exp-E2-FsP" secondAttribute="leading" constant="15" id="d6v-hO-g9d"/>
                                         <constraint firstItem="xre-ZA-sji" firstAttribute="top" secondItem="Exp-E2-FsP" secondAttribute="top" constant="11" id="opT-eb-pAp"/>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="CsA-r8-WzI" secondAttribute="trailing" constant="15" id="scE-AP-Dp4"/>
-                                        <constraint firstAttribute="bottom" secondItem="dFL-np-fab" secondAttribute="bottom" constant="10" id="ulU-SY-ugY"/>
+                                        <constraint firstItem="0QD-Lt-caX" firstAttribute="bottom" secondItem="dFL-np-fab" secondAttribute="bottom" constant="10" id="ulU-SY-ugY"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <constraints>
-                                    <constraint firstItem="dFL-np-fab" firstAttribute="width" secondItem="dGY-Gg-JjU" secondAttribute="width" multiplier="0.0314" id="klc-4Y-vHu"/>
-                                    <constraint firstItem="0QD-Lt-caX" firstAttribute="width" secondItem="dGY-Gg-JjU" secondAttribute="width" multiplier="0.1908" id="lgd-oZ-vWD"/>
+                                    <constraint firstItem="dFL-np-fab" firstAttribute="height" secondItem="Exp-E2-FsP" secondAttribute="width" multiplier="13:375" id="klc-4Y-vHu"/>
+                                    <constraint firstItem="0QD-Lt-caX" firstAttribute="height" secondItem="Exp-E2-FsP" secondAttribute="width" multiplier="118:375" id="lgd-oZ-vWD"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="poster" destination="0QD-Lt-caX" id="zUr-Jh-DqH"/>

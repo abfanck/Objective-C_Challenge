@@ -46,6 +46,14 @@
     [dict setObject:imageData forKey:@"posterData"];
     
     [self.populaeMovies addObject:dict];
+    
+    NSMutableDictionary *dict02 = NSMutableDictionary.new;
+    [dict02 setObject:@"Alladin" forKey:@"title"];
+    [dict02 setObject:@"Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to..." forKey:@"resume"];
+    [dict02 setObject:@"7.3" forKey:@"rate"];
+    [dict02 setObject:imageData forKey:@"posterData"];
+    
+    [self.populaeMovies addObject:dict02];
 }
 
 - (void) setUpNowPlaying {
@@ -71,7 +79,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    if (section == 0) {
+        return self.populaeMovies.count;
+    } else {
+        return self.nowPlaying.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -94,16 +106,22 @@
     return cell;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    NSString *title;
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 35)];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, tableView.frame.size.width, 35)];
+    [label setFont:[UIFont boldSystemFontOfSize:17]];
+    label.textColor = UIColor.blackColor;
     
     if (section == 0) {
-        title = @"Popular Movies";
+        label.text = @"Popular Movies";
     } else {
-        title = @"Now Playing";
+        label.text = @"Now Playing";
     }
     
-    return title;
+    [headerView addSubview:label];
+    
+    return headerView;
 }
 
 /*
