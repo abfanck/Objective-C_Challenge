@@ -6,8 +6,11 @@
 //
 
 #import "ViewController.h"
+#import "Networking.h"
 
 @interface ViewController ()
+
+@property (strong, nonatomic) Networking *networking;
 
 @end
 
@@ -15,10 +18,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     
+//     Isso em baixo inicializa a classe
+    _networking = Networking.new;
     
-    // TESTE GIT FUNCIONANDO
+//  Isso em baixo é como se chama a funcao da classe
+    [_networking fetchNowPlayingMovies];
 }
 
 
