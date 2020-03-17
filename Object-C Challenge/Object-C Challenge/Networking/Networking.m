@@ -11,9 +11,6 @@
 
 @implementation Networking
 
-// Chame o metodo assim: [_networking fetchMovie2:YES];
-// YES se esta buscando popular movies e NO se esta buscando Now Playing Movies
-
 /// Movies Fetch Function, use this method for fetch popular and now playing movies
 /// @param isPopularMovie If you want to fetch popular movies use YES and if you wanna fetch now playing movies use NO
 -(void)fetchMovie:(BOOL *)isPopularMovie {
