@@ -15,6 +15,7 @@
 		AAD04078241FF49E0025628C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAD04076241FF49E0025628C /* LaunchScreen.storyboard */; };
 		AAD0407B241FF49E0025628C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD0407A241FF49E0025628C /* main.m */; };
 		AB751F0924213843009A9BB2 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F0824213843009A9BB2 /* Networking.m */; };
+		AB751F0D24214C51009A9BB2 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F0C24214C51009A9BB2 /* Movie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		AAD0407A241FF49E0025628C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB751F0724213843009A9BB2 /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		AB751F0824213843009A9BB2 /* Networking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
+		AB751F0B24214C51009A9BB2 /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		AB751F0C24214C51009A9BB2 /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				AB751F0A2421384F009A9BB2 /* Networking */,
+				AB751F0E24214C58009A9BB2 /* Model */,
 				AAD04068241FF49B0025628C /* AppDelegate.h */,
 				AAD04069241FF49B0025628C /* AppDelegate.m */,
 				AAD0406B241FF49B0025628C /* SceneDelegate.h */,
@@ -87,6 +91,15 @@
 				AB751F0824213843009A9BB2 /* Networking.m */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		AB751F0E24214C58009A9BB2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB751F0B24214C51009A9BB2 /* Movie.h */,
+				AB751F0C24214C51009A9BB2 /* Movie.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB751F0D24214C51009A9BB2 /* Movie.m in Sources */,
 				AAD04070241FF49B0025628C /* ViewController.m in Sources */,
 				AB751F0924213843009A9BB2 /* Networking.m in Sources */,
 				AAD0406A241FF49B0025628C /* AppDelegate.m in Sources */,
