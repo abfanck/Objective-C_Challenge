@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)fetchMovieGenre:(NSNumber *)movieId completionHandler:(void (^)(NSMutableArray *array))completionHandler;;
 -(void)fetchMovie:(BOOL)isPopularMovie completionHandler:(void (^)(NSMutableArray *array))completionHandler;
--(NSString *)getImageString;
+-(NSString *)getImageString:(NSString *)posterPath;
+-(NSData *)getImageData:(NSString *)posterPath;
 
 @end
 

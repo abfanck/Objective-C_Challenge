@@ -133,4 +133,18 @@
     return urlString;
 }
 
+/// Use this to get the image data and return a NSData
+/// @param posterPath Is the movie posterpath (movie.posterpath)
+-(NSData *)getImageData:(NSString *)posterPath {
+    
+    NSString *urlString = [NSString stringWithFormat:@"https:image.tmdb.org/t/p/w500/%@", posterPath];
+       
+       //Objeto de local da busca (Remoto)
+       NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSData *imageData = [NSData dataWithContentsOfURL:url];
+    
+    return imageData;
+}
+
 @end
