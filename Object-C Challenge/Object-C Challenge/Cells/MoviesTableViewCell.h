@@ -11,13 +11,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MoviesTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *poster;
-@property (weak, nonatomic) IBOutlet UILabel *title;
-@property (weak, nonatomic) IBOutlet UILabel *resume;
-@property (weak, nonatomic) IBOutlet UIButton *star;
-@property (weak, nonatomic) IBOutlet UILabel *rate;
+@property (weak, nonatomic) IBOutlet UIImageView *posterImage;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *overviewLabel;
+@property (weak, nonatomic) IBOutlet UIButton *starButton;
+@property (weak, nonatomic) IBOutlet UILabel *voteAverageLabel;
 
-- (void)setTitle: (NSString *)title resume:(NSString *)resume rate:(NSString *)rate posterData:(NSData *)posterData;
+- (void)setTitle: (NSString *)title overview:(NSString *)resume voteAverage:(NSString *)rate posterData:(NSData *)posterData;
 
 @end
 

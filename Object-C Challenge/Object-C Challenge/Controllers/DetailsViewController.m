@@ -17,8 +17,8 @@
     [super viewDidLoad];
     
     self.titleLabel.text = [self.movieDetails valueForKey:@"title"];
-    self.rateLabel.text = [self.movieDetails valueForKey:@"rate"];
-    self.overviewLabel.text = [self.movieDetails valueForKey:@"resume"];
+    self.voteAverageLabel.text = [self.movieDetails valueForKey:@"voteAverage"];
+    self.overviewLabel.text = [self.movieDetails valueForKey:@"overview"];
     
     NSData *posterData = [self.movieDetails valueForKey:@"posterData"];
     self.posterImage.image = [UIImage imageWithData:posterData];

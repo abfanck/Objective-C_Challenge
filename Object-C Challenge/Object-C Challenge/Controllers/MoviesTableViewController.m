@@ -33,14 +33,16 @@ NSString *detailsSegue = @"movieDetails";
 
 #pragma mark - Mock Up Data
 
+// Just for TEST
+
 - (void) setUpPopularMovies {
     
     self.populaeMovies = NSMutableArray.new;
     
     NSMutableDictionary *dict = NSMutableDictionary.new;
     [dict setObject:@"Spider-Man: Far from Home" forKey:@"title"];
-    [dict setObject:@"Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to..." forKey:@"resume"];
-    [dict setObject:@"7.8" forKey:@"rate"];
+    [dict setObject:@"Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to..." forKey:@"overview"];
+    [dict setObject:@"7.8" forKey:@"voteAverage"];
     
     UIImage *teste = [UIImage imageNamed:@"teste"];
     NSData *imageData = UIImagePNGRepresentation(teste);
@@ -50,8 +52,8 @@ NSString *detailsSegue = @"movieDetails";
     
     NSMutableDictionary *dict02 = NSMutableDictionary.new;
     [dict02 setObject:@"Alladin" forKey:@"title"];
-    [dict02 setObject:@"Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to..." forKey:@"resume"];
-    [dict02 setObject:@"7.3" forKey:@"rate"];
+    [dict02 setObject:@"Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to..." forKey:@"overview"];
+    [dict02 setObject:@"7.3" forKey:@"voteAverage"];
     [dict02 setObject:imageData forKey:@"posterData"];
     
     [self.populaeMovies addObject:dict02];
@@ -63,8 +65,8 @@ NSString *detailsSegue = @"movieDetails";
     
     NSMutableDictionary *dict = NSMutableDictionary.new;
     [dict setObject:@"Fast & Furious" forKey:@"title"];
-    [dict setObject:@"A kindhearted street urchin named Aladdin embarks on a magical adventure after finding a lamp that releases a wisecra..." forKey:@"resume"];
-    [dict setObject:@"7.1" forKey:@"rate"];
+    [dict setObject:@"A kindhearted street urchin named Aladdin embarks on a magical adventure after finding a lamp that releases a wisecra..." forKey:@"overview"];
+    [dict setObject:@"7.1" forKey:@"voteAverage"];
     
     UIImage *teste = [UIImage imageNamed:@"teste"];
     NSData *imageData = UIImagePNGRepresentation(teste);
@@ -98,11 +100,11 @@ NSString *detailsSegue = @"movieDetails";
     }
     
     NSString *title = [movies[indexPath.row] valueForKey:@"title"];
-    NSString *resume = [movies[indexPath.row] valueForKey:@"resume"];
-    NSString *rate = [movies[indexPath.row] valueForKey:@"rate"];
+    NSString *resume = [movies[indexPath.row] valueForKey:@"overview"];
+    NSString *rate = [movies[indexPath.row] valueForKey:@"voteAverage"];
     NSData *posterData = [movies[indexPath.row] valueForKey:@"posterData"];
     
-    [cell setTitle:title resume:resume rate:rate posterData:posterData];
+    [cell setTitle:title overview:resume voteAverage:rate posterData:posterData];
     
     return cell;
 }

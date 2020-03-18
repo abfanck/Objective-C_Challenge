@@ -91,9 +91,9 @@
                     <connections>
                         <outlet property="genreLabel" destination="Gz7-Qh-ki4" id="maW-fL-Kh2"/>
                         <outlet property="posterImage" destination="jdJ-xb-P6k" id="yX1-r2-22R"/>
-                        <outlet property="rateLabel" destination="VaM-Ov-yV5" id="eE8-37-cgu"/>
                         <outlet property="starButton" destination="YqJ-go-eZA" id="7Ar-eS-oYj"/>
                         <outlet property="titleLabel" destination="BCn-Lf-JAl" id="iJf-Sp-G4U"/>
+                        <outlet property="voteAverageLabel" destination="VaM-Ov-yV5" id="eE8-37-cgu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fmd-wy-sIs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

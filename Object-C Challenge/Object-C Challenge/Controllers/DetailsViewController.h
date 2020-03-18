@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *genreLabel;
 @property (weak, nonatomic) IBOutlet UIButton *starButton;
-@property (weak, nonatomic) IBOutlet UILabel *rateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *voteAverageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *overviewLabel;
 
 @property NSMutableDictionary *movieDetails;

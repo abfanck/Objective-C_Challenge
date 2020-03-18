@@ -35,7 +35,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsA-r8-WzI">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsA-r8-WzI">
                                             <rect key="frame" x="112" y="36" width="33" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,11 +76,11 @@
                                     <constraint firstItem="0QD-Lt-caX" firstAttribute="height" secondItem="Exp-E2-FsP" secondAttribute="width" multiplier="118:375" id="lgd-oZ-vWD"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="poster" destination="0QD-Lt-caX" id="zUr-Jh-DqH"/>
-                                    <outlet property="rate" destination="L9w-ZB-38O" id="hCx-kr-3SW"/>
-                                    <outlet property="resume" destination="CsA-r8-WzI" id="lGw-hT-Igx"/>
-                                    <outlet property="star" destination="JRM-rA-Skk" id="WuV-nP-4L5"/>
-                                    <outlet property="title" destination="xre-ZA-sji" id="h9H-Yu-ghf"/>
+                                    <outlet property="overviewLabel" destination="CsA-r8-WzI" id="lGw-hT-Igx"/>
+                                    <outlet property="posterImage" destination="0QD-Lt-caX" id="zUr-Jh-DqH"/>
+                                    <outlet property="starButton" destination="JRM-rA-Skk" id="WuV-nP-4L5"/>
+                                    <outlet property="titleLabel" destination="xre-ZA-sji" id="h9H-Yu-ghf"/>
+                                    <outlet property="voteAverageLabel" destination="L9w-ZB-38O" id="hCx-kr-3SW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

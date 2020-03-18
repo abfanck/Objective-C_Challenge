@@ -13,9 +13,9 @@
     [super awakeFromNib];
     // Initialization code
     
-    self.poster.layer.cornerRadius = 10;
-    self.poster.layer.masksToBounds = YES;
-    self.poster.clipsToBounds = YES;
+    self.posterImage.layer.cornerRadius = 10;
+    self.posterImage.layer.masksToBounds = YES;
+    self.posterImage.clipsToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -24,11 +24,11 @@
     // Configure the view for the selected state
 }
 
-- (void)setTitle: (NSString *)title resume:(NSString *)resume rate:(NSString *)rate posterData:(NSData *)posterData {
-    self.poster.image = [UIImage imageWithData:posterData];
-    self.title.text = title;
-    self.resume.text = resume;
-    self.rate.text = rate;
+- (void)setTitle: (NSString *)title overview:(NSString *)overview voteAverage:(NSString *)voteAverage posterData:(NSData *)posterData {
+    self.posterImage.image = [UIImage imageWithData:posterData];
+    self.titleLabel.text = title;
+    self.overviewLabel.text = overview;
+    self.voteAverageLabel.text = voteAverage;
 }
 
 @end
