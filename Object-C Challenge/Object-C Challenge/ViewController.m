@@ -24,6 +24,11 @@
 //     Isso em baixo inicializa a classe
     _networking = Networking.new;
     _movies = NSMutableArray.new; // Mesma coisa que [NSMutableArray Alloc]
+    
+//    EU ACHO QUE ISSO TA FUNCIONANDO KKK
+//    É só colocar isso numa queue
+//    NSData *imageData = [_networking getImageData:@"/n6bUvigpRFqSwmPp1m2YADdbRBc.jpg"];
+//    UIImage *image = [UIImage imageWithData:imageData];
 
 }
 @end
