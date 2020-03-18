@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *poster;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *resume;
-@property (weak, nonatomic) IBOutlet UIImageView *star;
+@property (weak, nonatomic) IBOutlet UIButton *star;
 @property (weak, nonatomic) IBOutlet UILabel *rate;
 
 - (void)setTitle: (NSString *)title resume:(NSString *)resume rate:(NSString *)rate posterData:(NSData *)posterData;

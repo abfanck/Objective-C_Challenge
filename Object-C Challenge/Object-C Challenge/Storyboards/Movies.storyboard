@@ -14,6 +14,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" id="dGY-Gg-JjU" customClass="MoviesTableViewCell">
                                 <rect key="frame" x="0.0" y="55.5" width="414" height="138"/>
@@ -40,44 +41,45 @@
                                             <color key="textColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="dFL-np-fab">
-                                            <rect key="frame" x="112" y="111" width="14.5" height="14.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="dFL-np-fab" secondAttribute="height" multiplier="1:1" id="Oxh-bz-Evd"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9w-ZB-38O">
                                             <rect key="frame" x="131.5" y="111" width="31" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRM-rA-Skk">
+                                            <rect key="frame" x="112" y="111" width="14.5" height="14.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="JRM-rA-Skk" secondAttribute="height" multiplier="1:1" id="v2f-LX-KbB"/>
+                                            </constraints>
+                                            <state key="normal" image="star"/>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="xre-ZA-sji" secondAttribute="trailing" constant="15" id="8Kp-7i-Scf"/>
                                         <constraint firstItem="CsA-r8-WzI" firstAttribute="leading" secondItem="0QD-Lt-caX" secondAttribute="trailing" constant="10" id="D3H-xT-sjq"/>
                                         <constraint firstItem="CsA-r8-WzI" firstAttribute="top" secondItem="xre-ZA-sji" secondAttribute="bottom" constant="8" id="HsA-aP-QKe"/>
-                                        <constraint firstItem="dFL-np-fab" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CsA-r8-WzI" secondAttribute="bottom" constant="10" id="I8A-Tm-rz1"/>
-                                        <constraint firstItem="L9w-ZB-38O" firstAttribute="leading" secondItem="dFL-np-fab" secondAttribute="trailing" constant="5" id="NgI-Hn-L4X"/>
-                                        <constraint firstItem="dFL-np-fab" firstAttribute="leading" secondItem="0QD-Lt-caX" secondAttribute="trailing" constant="10" id="QBX-uZ-M5z"/>
-                                        <constraint firstItem="L9w-ZB-38O" firstAttribute="centerY" secondItem="dFL-np-fab" secondAttribute="centerY" id="UA2-Dg-DiJ"/>
+                                        <constraint firstItem="JRM-rA-Skk" firstAttribute="height" secondItem="Exp-E2-FsP" secondAttribute="width" multiplier="13:375" id="Idl-mN-70M"/>
+                                        <constraint firstItem="L9w-ZB-38O" firstAttribute="leading" secondItem="JRM-rA-Skk" secondAttribute="trailing" constant="5" id="Phx-dl-zle"/>
+                                        <constraint firstItem="JRM-rA-Skk" firstAttribute="leading" secondItem="0QD-Lt-caX" secondAttribute="trailing" constant="10" id="Um8-Zl-HU8"/>
                                         <constraint firstItem="xre-ZA-sji" firstAttribute="leading" secondItem="0QD-Lt-caX" secondAttribute="trailing" constant="10" id="a4C-YT-ZRM"/>
                                         <constraint firstItem="0QD-Lt-caX" firstAttribute="top" secondItem="Exp-E2-FsP" secondAttribute="top" constant="5" id="aaP-LB-hDI"/>
                                         <constraint firstItem="0QD-Lt-caX" firstAttribute="leading" secondItem="Exp-E2-FsP" secondAttribute="leading" constant="15" id="d6v-hO-g9d"/>
+                                        <constraint firstItem="0QD-Lt-caX" firstAttribute="bottom" secondItem="JRM-rA-Skk" secondAttribute="bottom" constant="10" id="fVB-yk-c6g"/>
+                                        <constraint firstItem="JRM-rA-Skk" firstAttribute="centerY" secondItem="L9w-ZB-38O" secondAttribute="centerY" id="kOs-tj-h0G"/>
                                         <constraint firstItem="xre-ZA-sji" firstAttribute="top" secondItem="Exp-E2-FsP" secondAttribute="top" constant="11" id="opT-eb-pAp"/>
+                                        <constraint firstItem="JRM-rA-Skk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CsA-r8-WzI" secondAttribute="bottom" constant="10" id="r12-KT-AlU"/>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="CsA-r8-WzI" secondAttribute="trailing" constant="15" id="scE-AP-Dp4"/>
-                                        <constraint firstItem="0QD-Lt-caX" firstAttribute="bottom" secondItem="dFL-np-fab" secondAttribute="bottom" constant="10" id="ulU-SY-ugY"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <constraints>
-                                    <constraint firstItem="dFL-np-fab" firstAttribute="height" secondItem="Exp-E2-FsP" secondAttribute="width" multiplier="13:375" id="klc-4Y-vHu"/>
                                     <constraint firstItem="0QD-Lt-caX" firstAttribute="height" secondItem="Exp-E2-FsP" secondAttribute="width" multiplier="118:375" id="lgd-oZ-vWD"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="poster" destination="0QD-Lt-caX" id="zUr-Jh-DqH"/>
                                     <outlet property="rate" destination="L9w-ZB-38O" id="hCx-kr-3SW"/>
                                     <outlet property="resume" destination="CsA-r8-WzI" id="lGw-hT-Igx"/>
-                                    <outlet property="star" destination="dFL-np-fab" id="AQx-uJ-fbF"/>
+                                    <outlet property="star" destination="JRM-rA-Skk" id="WuV-nP-4L5"/>
                                     <outlet property="title" destination="xre-ZA-sji" id="h9H-Yu-ghf"/>
                                 </connections>
                             </tableViewCell>
@@ -87,11 +89,26 @@
                             <outlet property="delegate" destination="Eao-HS-9m9" id="SAc-PF-0Ic"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Movies" id="3Zc-cJ-cAC"/>
+                    <navigationItem key="navigationItem" title="Movies" id="3Zc-cJ-cAC">
+                        <barButtonItem key="backBarButtonItem" title=" " id="vaN-ZW-0PI"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="w1K-FN-S3e" kind="show" identifier="movieDetails" id="9SF-KY-6jm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wso-G0-dcp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="108.69565217391305" y="192.85714285714286"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="0fa-oi-KVl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Details" id="w1K-FN-S3e" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="1XU-uG-2jp"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nIx-jr-BUX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="680" y="193"/>
         </scene>
     </scenes>
     <resources>
