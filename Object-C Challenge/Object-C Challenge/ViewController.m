@@ -6,8 +6,13 @@
 //
 
 #import "ViewController.h"
+#import "Networking.h"
+#import "Movie.h"
 
 @interface ViewController ()
+
+@property (strong, nonatomic) Networking *networking;
+@property (strong, nonatomic) NSMutableArray *movies;
 
 @end
 
@@ -15,11 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    
-    // TESTE GIT FUNCIONANDO
+//     Isso em baixo inicializa a classe
+    _networking = Networking.new;
+    _movies = NSMutableArray.new; // Mesma coisa que [NSMutableArray Alloc]
+
 }
-
-
 @end

@@ -14,6 +14,9 @@
 		AAD04075241FF49E0025628C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD04074241FF49E0025628C /* Assets.xcassets */; };
 		AAD04078241FF49E0025628C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAD04076241FF49E0025628C /* LaunchScreen.storyboard */; };
 		AAD0407B241FF49E0025628C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD0407A241FF49E0025628C /* main.m */; };
+		AB751F0924213843009A9BB2 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F0824213843009A9BB2 /* Networking.m */; };
+		AB751F0D24214C51009A9BB2 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F0C24214C51009A9BB2 /* Movie.m */; };
+		AB751F112421538E009A9BB2 /* Genre.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F102421538E009A9BB2 /* Genre.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,12 @@
 		AAD04077241FF49E0025628C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAD04079241FF49E0025628C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAD0407A241FF49E0025628C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AB751F0724213843009A9BB2 /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
+		AB751F0824213843009A9BB2 /* Networking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
+		AB751F0B24214C51009A9BB2 /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		AB751F0C24214C51009A9BB2 /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		AB751F0F2421538E009A9BB2 /* Genre.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Genre.h; sourceTree = "<group>"; };
+		AB751F102421538E009A9BB2 /* Genre.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Genre.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +70,8 @@
 		AAD04067241FF49B0025628C /* Object-C Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				AB751F0A2421384F009A9BB2 /* Networking */,
+				AB751F0E24214C58009A9BB2 /* Model */,
 				AAD04068241FF49B0025628C /* AppDelegate.h */,
 				AAD04069241FF49B0025628C /* AppDelegate.m */,
 				AAD0406B241FF49B0025628C /* SceneDelegate.h */,
@@ -74,6 +85,26 @@
 				AAD0407A241FF49E0025628C /* main.m */,
 			);
 			path = "Object-C Challenge";
+			sourceTree = "<group>";
+		};
+		AB751F0A2421384F009A9BB2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AB751F0724213843009A9BB2 /* Networking.h */,
+				AB751F0824213843009A9BB2 /* Networking.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		AB751F0E24214C58009A9BB2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB751F0B24214C51009A9BB2 /* Movie.h */,
+				AB751F0C24214C51009A9BB2 /* Movie.m */,
+				AB751F0F2421538E009A9BB2 /* Genre.h */,
+				AB751F102421538E009A9BB2 /* Genre.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,6 +137,7 @@
 				TargetAttributes = {
 					AAD04064241FF49B0025628C = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -145,7 +177,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB751F0D24214C51009A9BB2 /* Movie.m in Sources */,
+				AB751F112421538E009A9BB2 /* Genre.m in Sources */,
 				AAD04070241FF49B0025628C /* ViewController.m in Sources */,
+				AB751F0924213843009A9BB2 /* Networking.m in Sources */,
 				AAD0406A241FF49B0025628C /* AppDelegate.m in Sources */,
 				AAD0407B241FF49E0025628C /* main.m in Sources */,
 				AAD0406D241FF49B0025628C /* SceneDelegate.m in Sources */,
@@ -288,7 +323,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LZ4KUFVTZH;
 				INFOPLIST_FILE = "Object-C Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -296,6 +333,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "academy.am.Object-C-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Object-C Challenge/Object-C Challenge-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -304,7 +344,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LZ4KUFVTZH;
 				INFOPLIST_FILE = "Object-C Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -312,6 +354,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "academy.am.Object-C-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Object-C Challenge/Object-C Challenge-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
