@@ -13,7 +13,8 @@
 
 /// Movies Fetch Function, use this method for fetch popular and now playing movies
 /// @param isPopularMovie If you want to fetch popular movies use YES and if you wanna fetch now playing movies use NO
--(void)fetchMovie:(BOOL *)isPopularMovie {
+/// @param completionHandler The completion handler array is the movie array
+-(void)fetchMovie:(BOOL)isPopularMovie completionHandler:(void (^)(NSMutableArray *array))completionHandler {
     
     //Alocando memoria pra urlString
     NSString *urlString = [NSString alloc];
@@ -40,7 +41,7 @@
         
         if (err) {
             NSLog(@"Failed serialization json with error: %@", err);
-            return;
+//            return;
         }
         
         //Aloca memoria pro array de filmes
@@ -71,12 +72,14 @@
         }
         NSLog(@"Terminou");
         
+        completionHandler(movies);
+        
     }] resume];
 }
 
 /// Fetch the genres using movie ID
 /// @param movieId Pass the movie id to get movie's genres
--(void)fetchMovieGenre:(NSNumber *)movieId {
+-(void)fetchMovieGenre:(NSNumber *)movieId completionHandler:(void (^)(NSMutableArray *array))completionHandler{
     
     //Cria a url string com o movie id
     NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%@?api_key=4c86680eeadb3c625a7f347b2ce6e135&language=en-US", movieId.stringValue];
@@ -122,7 +125,12 @@
         
         NSLog(@"Terminou");
     }] resume];
+}
+-(NSString *)getImageString:(NSString *)posterPath {
     
+    NSString *urlString = [NSString stringWithFormat:@"https:image.tmdb.org/t/p/w500/%@", posterPath];
+    
+    return urlString;
 }
 
 @end

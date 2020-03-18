@@ -7,10 +7,12 @@
 
 #import "ViewController.h"
 #import "Networking.h"
+#import "Movie.h"
 
 @interface ViewController ()
 
 @property (strong, nonatomic) Networking *networking;
+@property (strong, nonatomic) NSMutableArray *movies;
 
 @end
 
@@ -19,14 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view.
-    
 //     Isso em baixo inicializa a classe
     _networking = Networking.new;
-    
-//  Isso em baixo é como se chama a funcao da classe
-//    [_networking fetchMovieGenre: [NSNumber numberWithInt:(475557)]];
+    _movies = NSMutableArray.new; // Mesma coisa que [NSMutableArray Alloc]
+
 }
-
-
 @end

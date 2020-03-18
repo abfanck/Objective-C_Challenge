@@ -11,8 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Networking : NSObject
 
--(void)fetchMovieGenre:(NSNumber *)movieId;
--(void)fetchMovie:(BOOL *)isPopularMovie;
+-(void)fetchMovieGenre:(NSNumber *)movieId completionHandler:(void (^)(NSMutableArray *array))completionHandler;;
+-(void)fetchMovie:(BOOL)isPopularMovie completionHandler:(void (^)(NSMutableArray *array))completionHandler;
+-(NSString *)getImageString;
 
 @end
 
