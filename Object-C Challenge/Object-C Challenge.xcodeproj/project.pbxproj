@@ -7,31 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AAC30BDC2422BF74006F5AB5 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC30BDB2422BF74006F5AB5 /* Navigation.storyboard */; };
 		AAD0406A241FF49B0025628C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD04069241FF49B0025628C /* AppDelegate.m */; };
 		AAD0406D241FF49B0025628C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD0406C241FF49B0025628C /* SceneDelegate.m */; };
-		AAD04070241FF49B0025628C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD0406F241FF49B0025628C /* ViewController.m */; };
-		AAD04073241FF49B0025628C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAD04071241FF49B0025628C /* Main.storyboard */; };
 		AAD04075241FF49E0025628C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD04074241FF49E0025628C /* Assets.xcassets */; };
 		AAD04078241FF49E0025628C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAD04076241FF49E0025628C /* LaunchScreen.storyboard */; };
-		AAD0407B241FF49E0025628C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD0407A241FF49E0025628C /* main.m */; };
+		AAD040822421394F0025628C /* Movies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAD040812421394F0025628C /* Movies.storyboard */; };
+		AAD733012421497C007C60CD /* MoviesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD733002421497C007C60CD /* MoviesTableViewController.m */; };
+		AAD7330424214B42007C60CD /* MoviesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD7330324214B42007C60CD /* MoviesTableViewCell.m */; };
+		AAFBF3D724229389001ACF5F /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAFBF3D624229389001ACF5F /* Details.storyboard */; };
+		AAFBF3DC242296F4001ACF5F /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFBF3DB242296F4001ACF5F /* DetailsViewController.m */; };
+		AAFBF3DE24229801001ACF5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFBF3DD24229801001ACF5F /* main.m */; };
 		AB751F0924213843009A9BB2 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F0824213843009A9BB2 /* Networking.m */; };
 		AB751F0D24214C51009A9BB2 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F0C24214C51009A9BB2 /* Movie.m */; };
 		AB751F112421538E009A9BB2 /* Genre.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F102421538E009A9BB2 /* Genre.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AAC30BDB2422BF74006F5AB5 /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
 		AAD04065241FF49B0025628C /* Object-C Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Object-C Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAD04068241FF49B0025628C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AAD04069241FF49B0025628C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AAD0406B241FF49B0025628C /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		AAD0406C241FF49B0025628C /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		AAD0406E241FF49B0025628C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AAD0406F241FF49B0025628C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		AAD04072241FF49B0025628C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAD04074241FF49E0025628C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAD04077241FF49E0025628C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAD04079241FF49E0025628C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AAD0407A241FF49E0025628C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AAD040812421394F0025628C /* Movies.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movies.storyboard; sourceTree = "<group>"; };
+		AAD732FF2421497C007C60CD /* MoviesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesTableViewController.h; sourceTree = "<group>"; };
+		AAD733002421497C007C60CD /* MoviesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesTableViewController.m; sourceTree = "<group>"; };
+		AAD7330224214B42007C60CD /* MoviesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesTableViewCell.h; sourceTree = "<group>"; };
+		AAD7330324214B42007C60CD /* MoviesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesTableViewCell.m; sourceTree = "<group>"; };
+		AAFBF3D624229389001ACF5F /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
+		AAFBF3DA242296F4001ACF5F /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		AAFBF3DB242296F4001ACF5F /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		AAFBF3DD24229801001ACF5F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB751F0724213843009A9BB2 /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		AB751F0824213843009A9BB2 /* Networking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
 		AB751F0B24214C51009A9BB2 /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
@@ -70,21 +80,51 @@
 		AAD04067241FF49B0025628C /* Object-C Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				AAD0408324213ABF0025628C /* Storyboards */,
+				AAFBF3D824229663001ACF5F /* Controllers */,
+				AAFBF3D9242296B4001ACF5F /* Cells */,
 				AB751F0A2421384F009A9BB2 /* Networking */,
 				AB751F0E24214C58009A9BB2 /* Model */,
 				AAD04068241FF49B0025628C /* AppDelegate.h */,
 				AAD04069241FF49B0025628C /* AppDelegate.m */,
 				AAD0406B241FF49B0025628C /* SceneDelegate.h */,
 				AAD0406C241FF49B0025628C /* SceneDelegate.m */,
-				AAD0406E241FF49B0025628C /* ViewController.h */,
-				AAD0406F241FF49B0025628C /* ViewController.m */,
-				AAD04071241FF49B0025628C /* Main.storyboard */,
 				AAD04074241FF49E0025628C /* Assets.xcassets */,
-				AAD04076241FF49E0025628C /* LaunchScreen.storyboard */,
 				AAD04079241FF49E0025628C /* Info.plist */,
-				AAD0407A241FF49E0025628C /* main.m */,
+				AAFBF3DD24229801001ACF5F /* main.m */,
 			);
 			path = "Object-C Challenge";
+			sourceTree = "<group>";
+		};
+		AAD0408324213ABF0025628C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AAD04076241FF49E0025628C /* LaunchScreen.storyboard */,
+				AAD040812421394F0025628C /* Movies.storyboard */,
+				AAFBF3D624229389001ACF5F /* Details.storyboard */,
+				AAC30BDB2422BF74006F5AB5 /* Navigation.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AAFBF3D824229663001ACF5F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AAD732FF2421497C007C60CD /* MoviesTableViewController.h */,
+				AAD733002421497C007C60CD /* MoviesTableViewController.m */,
+				AAFBF3DA242296F4001ACF5F /* DetailsViewController.h */,
+				AAFBF3DB242296F4001ACF5F /* DetailsViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AAFBF3D9242296B4001ACF5F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AAD7330224214B42007C60CD /* MoviesTableViewCell.h */,
+				AAD7330324214B42007C60CD /* MoviesTableViewCell.m */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		AB751F0A2421384F009A9BB2 /* Networking */ = {
@@ -164,9 +204,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC30BDC2422BF74006F5AB5 /* Navigation.storyboard in Resources */,
+				AAFBF3D724229389001ACF5F /* Details.storyboard in Resources */,
 				AAD04078241FF49E0025628C /* LaunchScreen.storyboard in Resources */,
 				AAD04075241FF49E0025628C /* Assets.xcassets in Resources */,
-				AAD04073241FF49B0025628C /* Main.storyboard in Resources */,
+				AAD040822421394F0025628C /* Movies.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,12 +219,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAD733012421497C007C60CD /* MoviesTableViewController.m in Sources */,
+				AAFBF3DC242296F4001ACF5F /* DetailsViewController.m in Sources */,
 				AB751F0D24214C51009A9BB2 /* Movie.m in Sources */,
 				AB751F112421538E009A9BB2 /* Genre.m in Sources */,
 				AAD04070241FF49B0025628C /* ViewController.m in Sources */,
 				AB751F0924213843009A9BB2 /* Networking.m in Sources */,
 				AAD0406A241FF49B0025628C /* AppDelegate.m in Sources */,
-				AAD0407B241FF49E0025628C /* main.m in Sources */,
+				AAD7330424214B42007C60CD /* MoviesTableViewCell.m in Sources */,
+				AAFBF3DE24229801001ACF5F /* main.m in Sources */,
 				AAD0406D241FF49B0025628C /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,14 +235,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AAD04071241FF49B0025628C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AAD04072241FF49B0025628C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AAD04076241FF49E0025628C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -325,7 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LZ4KUFVTZH;
+				DEVELOPMENT_TEAM = V4HVD5P383;
 				INFOPLIST_FILE = "Object-C Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -346,7 +383,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LZ4KUFVTZH;
+				DEVELOPMENT_TEAM = V4HVD5P383;
 				INFOPLIST_FILE = "Object-C Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
