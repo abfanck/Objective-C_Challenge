@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *overview;
 @property (strong, nonatomic) NSString *posterpath;
+@property (strong, nonatomic) NSData *imageData;
 @property (strong, nonatomic) NSNumber *movieId;
 @property (strong, nonatomic) NSNumber *voteAverage;
 @property (strong, nonatomic) NSArray *genres;

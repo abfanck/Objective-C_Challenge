@@ -8,11 +8,15 @@
 #import "MoviesTableViewController.h"
 #import "MoviesTableViewCell.h"
 #import "DetailsViewController.h"
+#import "Networking.h"
+#import "Movie.h"
 
 @interface MoviesTableViewController ()
 
-@property (strong, nonatomic) NSMutableArray<NSMutableDictionary *> *populaeMovies;
-@property (strong, nonatomic) NSMutableArray<NSMutableDictionary *> *nowPlaying;
+@property (strong, nonatomic) NSMutableArray<Movie *> *popularMovies;
+@property (strong, nonatomic) NSMutableArray<Movie *> *nowPlaying;
+@property (strong, nonatomic) Networking *networking;
+@property (strong, nonatomic) UIActivityIndicatorView *spinner;
 
 @end
 
@@ -23,67 +27,66 @@ NSString *detailsSegue = @"movieDetails";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setUpPopularMovies];
-    [self setUpNowPlaying];
+    //self.tableView.hidden = YES;
+    
+    [self setUpIndicator];
+    
+    self.networking = Networking.new;
+    
+    [self setUpMovies];
     
     //UIStoryboard *moviesStoryboard = [UIStoryboard storyboardWithName:@"Movies" bundle:nil];
     self.navigationItem.searchController = UISearchController.new;
     self.definesPresentationContext = YES;
 }
 
-#pragma mark - Mock Up Data
+#pragma mark - Receive data from api
 
-// Just for TEST
-
-- (void) setUpPopularMovies {
+- (void)setUpMovies {
     
-    self.populaeMovies = NSMutableArray.new;
-    
-    NSMutableDictionary *dict = NSMutableDictionary.new;
-    [dict setObject:@"Spider-Man: Far from Home" forKey:@"title"];
-    [dict setObject:@"Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to..." forKey:@"overview"];
-    [dict setObject:@"7.8" forKey:@"voteAverage"];
-    
-    UIImage *teste = [UIImage imageNamed:@"teste"];
-    NSData *imageData = UIImagePNGRepresentation(teste);
-    [dict setObject:imageData forKey:@"posterData"];
-    
-    [self.populaeMovies addObject:dict];
-    
-    NSMutableDictionary *dict02 = NSMutableDictionary.new;
-    [dict02 setObject:@"Alladin" forKey:@"title"];
-    [dict02 setObject:@"Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to..." forKey:@"overview"];
-    [dict02 setObject:@"7.3" forKey:@"voteAverage"];
-    [dict02 setObject:imageData forKey:@"posterData"];
-    
-    [self.populaeMovies addObject:dict02];
-}
-
-- (void) setUpNowPlaying {
-    
+    self.popularMovies = NSMutableArray.new;
     self.nowPlaying = NSMutableArray.new;
     
-    NSMutableDictionary *dict = NSMutableDictionary.new;
-    [dict setObject:@"Fast & Furious" forKey:@"title"];
-    [dict setObject:@"A kindhearted street urchin named Aladdin embarks on a magical adventure after finding a lamp that releases a wisecra..." forKey:@"overview"];
-    [dict setObject:@"7.1" forKey:@"voteAverage"];
+    [self.networking fetchMovie:YES completionHandler:^(NSMutableArray * _Nonnull array) {
+        self.popularMovies = array;
+    }];
     
-    UIImage *teste = [UIImage imageNamed:@"teste"];
-    NSData *imageData = UIImagePNGRepresentation(teste);
-    [dict setObject:imageData forKey:@"posterData"];
-    
-    [self.nowPlaying addObject:dict];
+    [self.networking fetchMovie:NO completionHandler:^(NSMutableArray * _Nonnull array) {
+        self.nowPlaying = array;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [self.spinner stopAnimating];
+            self.spinner.hidden = YES;
+        });
+    }];
+}
+
+- (void)setUpIndicator {
+    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleLarge];
+    [self.view addSubview:self.spinner];
+    [self.spinner setCenter:CGPointMake(self.tableView.center.x, self.tableView.center.y - 150)];
+    [self.spinner startAnimating];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    
+    if (self.nowPlaying.count == 0 && self.popularMovies.count == 0) {
+        return 0;
+    } else {
+        return 2;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return self.populaeMovies.count;
+        if (self.popularMovies.count > 2) {
+            return 2;
+        } else {
+            return self.popularMovies.count;
+        }
+        
     } else {
         return self.nowPlaying.count;
     }
@@ -94,17 +97,17 @@ NSString *detailsSegue = @"movieDetails";
     NSMutableArray *movies = NSMutableArray.new;
     
     if (indexPath.section == 0) {
-        movies = self.populaeMovies;
+        movies = self.popularMovies;
     } else {
         movies = self.nowPlaying;
     }
     
-    NSString *title = [movies[indexPath.row] valueForKey:@"title"];
-    NSString *resume = [movies[indexPath.row] valueForKey:@"overview"];
-    NSString *rate = [movies[indexPath.row] valueForKey:@"voteAverage"];
-    NSData *posterData = [movies[indexPath.row] valueForKey:@"posterData"];
+    NSString *title = [movies[indexPath.row] title];
+    NSString *overview = [movies[indexPath.row] overview];
+    NSString *voteAverage = [[movies[indexPath.row] voteAverage] stringValue];
+    NSData *posterData = [movies[indexPath.row] imageData];
     
-    [cell setTitle:title overview:resume voteAverage:rate posterData:posterData];
+    [cell setTitle:title overview:overview voteAverage:voteAverage posterData:posterData];
     
     return cell;
 }
@@ -131,7 +134,7 @@ NSString *detailsSegue = @"movieDetails";
     NSMutableArray *movies = NSMutableArray.new;
     
     if (indexPath.section == 0) {
-        movies = self.populaeMovies;
+        movies = self.popularMovies;
     } else {
         movies = self.nowPlaying;
     }
@@ -145,8 +148,8 @@ NSString *detailsSegue = @"movieDetails";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier  isEqual: detailsSegue]) {
         DetailsViewController *destination = segue.destinationViewController;
-        NSMutableDictionary *dict = sender;
-        destination.movieDetails = dict;
+        Movie *movie = sender;
+        destination.movieDetails = movie;
     }
 }
 

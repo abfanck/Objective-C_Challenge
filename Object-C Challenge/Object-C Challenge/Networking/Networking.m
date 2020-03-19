@@ -66,11 +66,11 @@
             movie.overview = overview;
             movie.posterpath = posterPath;
             movie.voteAverage = voteAverage;
+            movie.imageData = [self getImageData:movie.posterpath];
             
             //Adiciona filme no array
             [movies addObject:movie];
         }
-        NSLog(@"Terminou");
         
         completionHandler(movies);
         
@@ -123,14 +123,8 @@
             [genres addObject:genre];
         }
         
-        NSLog(@"Terminou");
+        completionHandler(genres);
     }] resume];
-}
--(NSString *)getImageString:(NSString *)posterPath {
-    
-    NSString *urlString = [NSString stringWithFormat:@"https:image.tmdb.org/t/p/w500/%@", posterPath];
-    
-    return urlString;
 }
 
 /// Use this to get the image data and return a NSData
