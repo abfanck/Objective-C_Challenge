@@ -18,6 +18,7 @@
 @property (strong, nonatomic) Networking *networking;
 @property (strong, nonatomic) UIActivityIndicatorView *spinner;
 @property (strong, nonatomic) NSMutableArray<Movie *> *searchMovies;
+@property (nonatomic) BOOL isSearching;
 
 @end
 
@@ -28,20 +29,20 @@ NSString *detailsSegue = @"movieDetails";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setUpIndicator];
+    self.isSearching = NO;
     
-//    self.searchController = UISearchController.new
+    [self setUpIndicator];
     
     self.networking = Networking.new;
     
     [self setUpMovies];
     
-//    UIStoryboard *moviesStoryboard = [UIStoryboard storyboardWithName:@"Movies" bundle:nil];
-//    [moviesStoryboard instantiateViewControllerWithIdentifier:@""];
     self.navigationItem.searchController = UISearchController.new;
+    self.navigationItem.searchController.searchResultsUpdater = self;
+    self.navigationItem.searchController.delegate = self;
+    self.navigationItem.searchController.searchBar.delegate = self;
+    self.navigationItem.searchController.obscuresBackgroundDuringPresentation = NO;
     self.definesPresentationContext = YES;
-    
-    [self updateSearchResultsForSearchController:self.navigationItem.searchController];
 }
 
 #pragma mark - Receive data from api
@@ -76,23 +77,30 @@ NSString *detailsSegue = @"movieDetails";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    if (self.nowPlaying.count == 0 && self.popularMovies.count == 0) {
-        return 0;
+    if (self.isSearching) {
+        return 1;
     } else {
-        return 2;
+        if (self.nowPlaying.count == 0 && self.popularMovies.count == 0) {
+            return 0;
+        } else {
+            return 2;
+        }
     }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        if (self.popularMovies.count > 2) {
-            return 2;
-        } else {
-            return self.popularMovies.count;
-        }
-        
+    if (self.isSearching) {
+        return self.searchMovies.count;
     } else {
-        return self.nowPlaying.count;
+        if (section == 0) {
+            if (self.popularMovies.count > 2) {
+                return 2;
+            } else {
+                return self.popularMovies.count;
+            }
+        } else {
+            return self.nowPlaying.count;
+        }
     }
 }
 
@@ -100,10 +108,14 @@ NSString *detailsSegue = @"movieDetails";
     MoviesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"movieCell" forIndexPath:indexPath];
     NSMutableArray *movies = NSMutableArray.new;
     
-    if (indexPath.section == 0) {
-        movies = self.popularMovies;
+    if (self.isSearching) {
+        movies = self.searchMovies;
     } else {
-        movies = self.nowPlaying;
+        if (indexPath.section == 0) {
+            movies = self.popularMovies;
+        } else {
+            movies = self.nowPlaying;
+        }
     }
     
     NSString *title = [movies[indexPath.row] title];
@@ -123,10 +135,14 @@ NSString *detailsSegue = @"movieDetails";
     [label setFont:[UIFont boldSystemFontOfSize:17]];
     label.textColor = UIColor.blackColor;
     
-    if (section == 0) {
-        label.text = @"Popular Movies";
+    if (self.isSearching) {
+        label.text = @"";
     } else {
-        label.text = @"Now Playing";
+        if (section == 0) {
+            label.text = @"Popular Movies";
+        } else {
+            label.text = @"Now Playing";
+        }
     }
     
     [headerView addSubview:label];
@@ -137,22 +153,46 @@ NSString *detailsSegue = @"movieDetails";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSMutableArray *movies = NSMutableArray.new;
     
-    if (indexPath.section == 0) {
-        movies = self.popularMovies;
+    if (self.isSearching) {
+        movies = self.searchMovies;
     } else {
-        movies = self.nowPlaying;
+        if (indexPath.section == 0) {
+            movies = self.popularMovies;
+        } else {
+            movies = self.nowPlaying;
+        }
     }
     
     [self performSegueWithIdentifier:detailsSegue sender:movies[indexPath.row]];
 }
 
-- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+#pragma mark - Search Extension
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.isSearching = YES;
     
-    NSString *searchText = searchController.searchBar.text;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.isSearching = NO;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+}
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    NSString *searchText = [searchController.searchBar.text stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLHostAllowedCharacterSet];
     [self.networking fetchSearch:searchText completionHandler:^(NSMutableArray * _Nonnull array) {
-        self.searchMovies = array;;
+        self.searchMovies = array;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     }];
-    NSLog(searchText);
 }
 
 #pragma mark - Navigation
