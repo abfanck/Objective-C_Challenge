@@ -9,11 +9,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef enum {
+    POPULAR,
+    NOWPLAYING,
+    SEARCH,
+    GENRE,
+    IMAGE
+} UrlType;
+
 @interface Networking : NSObject
 
 -(void)fetchMovieGenre:(NSNumber *)movieId completionHandler:(void (^)(NSMutableArray *array))completionHandler;;
--(void)fetchMovie:(BOOL)isPopularMovie completionHandler:(void (^)(NSMutableArray *array))completionHandler;
--(NSData *)getImageData:(NSString *)posterPath;
+-(void)fetchMovie:(UrlType)urlType completionHandler:(void (^)(NSMutableArray *array))completionHandler;
++(NSData *)getImageData:(NSString *)posterPath;
 -(void)fetchSearch:(NSString *)searchString completionHandler:(void (^)(NSMutableArray *array))completionHandler;
 
 @end

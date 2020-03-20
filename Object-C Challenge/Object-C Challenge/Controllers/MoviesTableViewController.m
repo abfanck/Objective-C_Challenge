@@ -30,7 +30,7 @@ NSString *detailsSegue = @"movieDetails";
     [super viewDidLoad];
     
     self.isSearching = NO;
-    
+
     [self setUpIndicator];
     
     self.networking = Networking.new;
@@ -52,11 +52,11 @@ NSString *detailsSegue = @"movieDetails";
     self.popularMovies = NSMutableArray.new;
     self.nowPlaying = NSMutableArray.new;
     
-    [self.networking fetchMovie:YES completionHandler:^(NSMutableArray * _Nonnull array) {
+    [self.networking fetchMovie:POPULAR completionHandler:^(NSMutableArray * _Nonnull array) {
         self.popularMovies = array;
     }];
     
-    [self.networking fetchMovie:NO completionHandler:^(NSMutableArray * _Nonnull array) {
+    [self.networking fetchMovie:NOWPLAYING completionHandler:^(NSMutableArray * _Nonnull array) {
         self.nowPlaying = array;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -186,6 +186,7 @@ NSString *detailsSegue = @"movieDetails";
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     NSString *searchText = [searchController.searchBar.text stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLHostAllowedCharacterSet];
+    
     [self.networking fetchSearch:searchText completionHandler:^(NSMutableArray * _Nonnull array) {
         self.searchMovies = array;
         

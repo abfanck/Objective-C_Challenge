@@ -23,6 +23,8 @@
 		AB751F112421538E009A9BB2 /* Genre.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F102421538E009A9BB2 /* Genre.m */; };
 		AB751F1324252756009A9BB2 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB751F1224252756009A9BB2 /* SwiftViewController.swift */; };
 		AB751F1824252AB3009A9BB2 /* SwiftStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB751F1724252AB3009A9BB2 /* SwiftStoryboard.storyboard */; };
+		AB751F1B242555EE009A9BB2 /* MovieDbAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F1A242555EE009A9BB2 /* MovieDbAPI.m */; };
+		AB751F1E24255616009A9BB2 /* Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F1D24255616009A9BB2 /* Parsing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,10 @@
 		AB751F1224252756009A9BB2 /* SwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
 		AB751F162425295B009A9BB2 /* Object-C Challenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Object-C Challenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		AB751F1724252AB3009A9BB2 /* SwiftStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SwiftStoryboard.storyboard; sourceTree = "<group>"; };
+		AB751F19242555EE009A9BB2 /* MovieDbAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieDbAPI.h; sourceTree = "<group>"; };
+		AB751F1A242555EE009A9BB2 /* MovieDbAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieDbAPI.m; sourceTree = "<group>"; };
+		AB751F1C24255616009A9BB2 /* Parsing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Parsing.h; sourceTree = "<group>"; };
+		AB751F1D24255616009A9BB2 /* Parsing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Parsing.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,10 @@
 			children = (
 				AB751F0724213843009A9BB2 /* Networking.h */,
 				AB751F0824213843009A9BB2 /* Networking.m */,
+				AB751F19242555EE009A9BB2 /* MovieDbAPI.h */,
+				AB751F1A242555EE009A9BB2 /* MovieDbAPI.m */,
+				AB751F1C24255616009A9BB2 /* Parsing.h */,
+				AB751F1D24255616009A9BB2 /* Parsing.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -228,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB751F1E24255616009A9BB2 /* Parsing.m in Sources */,
 				AAD733012421497C007C60CD /* MoviesTableViewController.m in Sources */,
 				AAFBF3DC242296F4001ACF5F /* DetailsViewController.m in Sources */,
 				AB751F0D24214C51009A9BB2 /* Movie.m in Sources */,
@@ -237,6 +248,7 @@
 				AAD7330424214B42007C60CD /* MoviesTableViewCell.m in Sources */,
 				AAFBF3DE24229801001ACF5F /* main.m in Sources */,
 				AB751F1324252756009A9BB2 /* SwiftViewController.swift in Sources */,
+				AB751F1B242555EE009A9BB2 /* MovieDbAPI.m in Sources */,
 				AAD0406D241FF49B0025628C /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
