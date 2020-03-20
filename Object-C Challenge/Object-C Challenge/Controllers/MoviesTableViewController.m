@@ -80,7 +80,7 @@ NSString *detailsSegue = @"movieDetails";
     if (self.isSearching) {
         return 1;
     } else {
-        if (self.nowPlaying.count == 0 && self.popularMovies.count == 0) {
+        if (self.nowPlaying.count == 0 || self.popularMovies.count == 0) {
             return 0;
         } else {
             return 2;
