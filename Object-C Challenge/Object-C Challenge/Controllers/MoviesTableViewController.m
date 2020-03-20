@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSMutableArray<Movie *> *nowPlaying;
 @property (strong, nonatomic) Networking *networking;
 @property (strong, nonatomic) UIActivityIndicatorView *spinner;
+@property (strong, nonatomic) NSMutableArray<Movie *> *searchMovies;
 
 @end
 
@@ -27,17 +28,20 @@ NSString *detailsSegue = @"movieDetails";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //self.tableView.hidden = YES;
-    
     [self setUpIndicator];
+    
+//    self.searchController = UISearchController.new
     
     self.networking = Networking.new;
     
     [self setUpMovies];
     
-    //UIStoryboard *moviesStoryboard = [UIStoryboard storyboardWithName:@"Movies" bundle:nil];
+//    UIStoryboard *moviesStoryboard = [UIStoryboard storyboardWithName:@"Movies" bundle:nil];
+//    [moviesStoryboard instantiateViewControllerWithIdentifier:@""];
     self.navigationItem.searchController = UISearchController.new;
     self.definesPresentationContext = YES;
+    
+    [self updateSearchResultsForSearchController:self.navigationItem.searchController];
 }
 
 #pragma mark - Receive data from api
@@ -140,6 +144,15 @@ NSString *detailsSegue = @"movieDetails";
     }
     
     [self performSegueWithIdentifier:detailsSegue sender:movies[indexPath.row]];
+}
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    
+    NSString *searchText = searchController.searchBar.text;
+    [self.networking fetchSearch:searchText completionHandler:^(NSMutableArray * _Nonnull array) {
+        self.searchMovies = array;;
+    }];
+    NSLog(searchText);
 }
 
 #pragma mark - Navigation
