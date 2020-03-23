@@ -25,7 +25,7 @@
 		AB751F1824252AB3009A9BB2 /* SwiftStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB751F1724252AB3009A9BB2 /* SwiftStoryboard.storyboard */; };
 		AB751F1B242555EE009A9BB2 /* MovieDbAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F1A242555EE009A9BB2 /* MovieDbAPI.m */; };
 		AB751F1E24255616009A9BB2 /* Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F1D24255616009A9BB2 /* Parsing.m */; };
-		AB751F26242925D1009A9BB2 /* Object_C_ChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F25242925D1009A9BB2 /* Object_C_ChallengeTests.m */; };
+		AB751F2F2429327F009A9BB2 /* Object_C_ChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F25242925D1009A9BB2 /* Object_C_ChallengeTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -319,7 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB751F26242925D1009A9BB2 /* Object_C_ChallengeTests.m in Sources */,
+				AB751F2F2429327F009A9BB2 /* Object_C_ChallengeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

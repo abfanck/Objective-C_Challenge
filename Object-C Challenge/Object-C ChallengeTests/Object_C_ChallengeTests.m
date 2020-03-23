@@ -6,6 +6,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "Networking.h"
 
 @interface Object_C_ChallengeTests : XCTestCase
 
