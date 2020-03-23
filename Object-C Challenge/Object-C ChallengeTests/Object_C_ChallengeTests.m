@@ -6,9 +6,11 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "Networking.h"
+#import <Object-C Challenge/Networking/Networking.h>
 
 @interface Object_C_ChallengeTests : XCTestCase
+
+@property (strong, nonatomic) Networking *networkig;
 
 @end
 
@@ -16,6 +18,8 @@
 
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    _networkig = Networking.new;
 }
 
 - (void)tearDown {
@@ -25,6 +29,8 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    XCTAssertTrue([_networkig testandoOTeste:YES]);
 }
 
 - (void)testPerformanceExample {
