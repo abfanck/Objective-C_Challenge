@@ -7,6 +7,7 @@
 
 #import <XCTest/XCTest.h>
 #import "Networking.h"
+#import "MovieDbAPI.h"
 
 @interface NetworkingTests : XCTestCase
 
@@ -35,7 +36,7 @@
         [expectation fulfill];
     }];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
 - (void)testFetchNowPlaying {
@@ -46,7 +47,7 @@
         [expectation fulfill];
     }];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
 - (void)testFetchMovieGenre {
@@ -59,7 +60,7 @@
         [expectation fulfill];
     }];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
 - (void)testFetchSearch {
@@ -72,7 +73,65 @@
         [expectation fulfill];
     }];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
 }
+
+-(void)testGetUrlPopular {
+    
+    NSURL *popularUrl = [[NSURL alloc] initWithString:@"https://api.themoviedb.org/3/movie/popular?api_key=4c86680eeadb3c625a7f347b2ce6e135&language=en-US&page=1"];
+    
+    NSURL *movieDbApiPopular = [MovieDbAPI getUrl:POPULAR];
+    
+    XCTAssertEqualObjects(popularUrl, movieDbApiPopular);
+}
+
+-(void)testGetUrlNowPlaying {
+    
+    NSURL *popularUrl = [[NSURL alloc] initWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=4c86680eeadb3c625a7f347b2ce6e135&language=en-US&page=1"];
+    
+    NSURL *movieDbApiNowPlaying = [MovieDbAPI getUrl:NOWPLAYING];
+    
+    XCTAssertEqualObjects(popularUrl, movieDbApiNowPlaying);
+}
+
+-(void)testGetUrlGenre{
+    
+    NSNumber *movieID = [[NSNumber alloc] initWithInt:419704];
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%@?api_key=4c86680eeadb3c625a7f347b2ce6e135&language=en-US", movieID.stringValue];
+    
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    
+    NSURL *movieDbApiGenres = [MovieDbAPI getUrl:GENRE string:movieID.stringValue];
+    
+    XCTAssertEqualObjects(url, movieDbApiGenres);
+}
+
+-(void)testGetUrlImage {
+    
+    NSString *posterPath = @"/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg";
+    
+    NSString *urlString = [NSString stringWithFormat:@"https:image.tmdb.org/t/p/w500/%@", posterPath];
+    
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    
+    NSURL *movieDbApiImage = [MovieDbAPI getUrl:IMAGE string:posterPath];
+    
+    XCTAssertEqualObjects(url, movieDbApiImage);
+}
+
+-(void)testGetUrlSearch {
+    
+    NSString *searchString = @"art";
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/search/movie?api_key=4c86680eeadb3c625a7f347b2ce6e135&language=en-US&query=%@&page=1&include_adult=false", searchString];
+    
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    
+    NSURL *movieDbApiSearch = [MovieDbAPI getUrl:SEARCH string:searchString];
+    
+    XCTAssertEqualObjects(url, movieDbApiSearch);
+}
+
 
 @end

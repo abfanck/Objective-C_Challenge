@@ -123,14 +123,4 @@
     }] resume];
 }
 
-
-
-//TESTE
-
--(BOOL)testandoOTeste: (BOOL)boolean {
-    
-    return boolean;
-}
-
-
 @end

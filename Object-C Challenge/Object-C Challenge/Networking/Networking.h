@@ -24,10 +24,6 @@ typedef enum {
 +(NSData *)getImageData:(NSString *)posterPath;
 -(void)fetchSearch:(NSString *)searchString completionHandler:(void (^)(NSMutableArray *array))completionHandler;
 
-//TESTE
-
--(BOOL)testandoOTeste: (BOOL)boolean;
-
 @end
 
 NS_ASSUME_NONNULL_END
