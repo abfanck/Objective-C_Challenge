@@ -133,5 +133,32 @@
     XCTAssertEqualObjects(url, movieDbApiSearch);
 }
 
+- (void)testDataTask
+{
+    XCTestExpectation *expectation = [self expectationWithDescription:@"asynchronous request"];
+
+    NSString *searchString = @"art";
+    NSURL *url = [MovieDbAPI getUrl:SEARCH string:searchString];
+    
+    NSURLSessionTask *task = [NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        XCTAssertNil(error, @"dataTaskWithURL error %@", error);
+
+        if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+            NSInteger statusCode = [(NSHTTPURLResponse *) response statusCode];
+            XCTAssertEqual(statusCode, 200, @"status code was not 200; was %ld", statusCode);
+        }
+
+        XCTAssert(data, @"data nil");
+
+        // do additional tests on the contents of the `data` object here, if you want
+
+        // when all done, Fulfill the expectation
+
+        [expectation fulfill];
+    }];
+    [task resume];
+
+    [self waitForExpectationsWithTimeout:10.0 handler:nil];
+}
 
 @end
