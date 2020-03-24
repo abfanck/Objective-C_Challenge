@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA49AEC5242948E100C73DD4 /* NetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA49AEC4242948E100C73DD4 /* NetworkingTests.m */; };
 		AAC30BDC2422BF74006F5AB5 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC30BDB2422BF74006F5AB5 /* Navigation.storyboard */; };
 		AAD0406A241FF49B0025628C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD04069241FF49B0025628C /* AppDelegate.m */; };
 		AAD0406D241FF49B0025628C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD0406C241FF49B0025628C /* SceneDelegate.m */; };
@@ -29,7 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AB751F28242925D1009A9BB2 /* PBXContainerItemProxy */ = {
+		AA0AD5E924293D7C00730119 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AAD0405D241FF49B0025628C /* Project object */;
 			proxyType = 1;
@@ -39,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA0AD5E424293D7C00730119 /* Object-C ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Object-C ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0AD5E824293D7C00730119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA49AEC4242948E100C73DD4 /* NetworkingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingTests.m; sourceTree = "<group>"; };
 		AAC30BDB2422BF74006F5AB5 /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
 		AAD04065241FF49B0025628C /* Object-C Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Object-C Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAD04068241FF49B0025628C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,6 +80,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AA0AD5E124293D7C00730119 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AAD04062241FF49B0025628C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,11 +104,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA0AD5E524293D7C00730119 /* Object-C ChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA0AD5E824293D7C00730119 /* Info.plist */,
+				AA49AEC4242948E100C73DD4 /* NetworkingTests.m */,
+			);
+			path = "Object-C ChallengeTests";
+			sourceTree = "<group>";
+		};
 		AAD0405C241FF49B0025628C = {
 			isa = PBXGroup;
 			children = (
 				AAD04067241FF49B0025628C /* Object-C Challenge */,
-				AB751F24242925D1009A9BB2 /* Object-C ChallengeTests */,
+				AA0AD5E524293D7C00730119 /* Object-C ChallengeTests */,
 				AAD04066241FF49B0025628C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				AAD04065241FF49B0025628C /* Object-C Challenge.app */,
-				AB751F23242925D1009A9BB2 /* Object-C ChallengeTests.xctest */,
+				AA0AD5E424293D7C00730119 /* Object-C ChallengeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,6 +220,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AA0AD5E324293D7C00730119 /* Object-C ChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA0AD5ED24293D7C00730119 /* Build configuration list for PBXNativeTarget "Object-C ChallengeTests" */;
+			buildPhases = (
+				AA0AD5E024293D7C00730119 /* Sources */,
+				AA0AD5E124293D7C00730119 /* Frameworks */,
+				AA0AD5E224293D7C00730119 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA0AD5EA24293D7C00730119 /* PBXTargetDependency */,
+			);
+			name = "Object-C ChallengeTests";
+			productName = "Object-C ChallengeTests";
+			productReference = AA0AD5E424293D7C00730119 /* Object-C ChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AAD04064241FF49B0025628C /* Object-C Challenge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAD0407E241FF49E0025628C /* Build configuration list for PBXNativeTarget "Object-C Challenge" */;
@@ -243,6 +281,10 @@
 			attributes = {
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
+					AA0AD5E324293D7C00730119 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = AAD04064241FF49B0025628C;
+					};
 					AAD04064241FF49B0025628C = {
 						CreatedOnToolsVersion = 11.3.1;
 						LastSwiftMigration = 1130;
@@ -267,12 +309,19 @@
 			projectRoot = "";
 			targets = (
 				AAD04064241FF49B0025628C /* Object-C Challenge */,
-				AB751F22242925D1009A9BB2 /* Object-C ChallengeTests */,
+				AA0AD5E324293D7C00730119 /* Object-C ChallengeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AA0AD5E224293D7C00730119 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AAD04063241FF49B0025628C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -296,6 +345,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AA0AD5E024293D7C00730119 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA49AEC5242948E100C73DD4 /* NetworkingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AAD04061241FF49B0025628C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -326,10 +383,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AB751F29242925D1009A9BB2 /* PBXTargetDependency */ = {
+		AA0AD5EA24293D7C00730119 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AAD04064241FF49B0025628C /* Object-C Challenge */;
-			targetProxy = AB751F28242925D1009A9BB2 /* PBXContainerItemProxy */;
+			targetProxy = AA0AD5E924293D7C00730119 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -345,6 +402,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AA0AD5EB24293D7C00730119 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V4HVD5P383;
+				INFOPLIST_FILE = "Object-C ChallengeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "academy.am.Object-C-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Object-C Challenge.app/Object-C Challenge";
+			};
+			name = Debug;
+		};
+		AA0AD5EC24293D7C00730119 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V4HVD5P383;
+				INFOPLIST_FILE = "Object-C ChallengeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "academy.am.Object-C-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Object-C Challenge.app/Object-C Challenge";
+			};
+			name = Release;
+		};
 		AAD0407C241FF49E0025628C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -463,7 +560,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LZ4KUFVTZH;
+				DEVELOPMENT_TEAM = V4HVD5P383;
 				INFOPLIST_FILE = "Object-C Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -484,7 +581,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LZ4KUFVTZH;
+				DEVELOPMENT_TEAM = V4HVD5P383;
 				INFOPLIST_FILE = "Object-C Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -543,6 +640,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AA0AD5ED24293D7C00730119 /* Build configuration list for PBXNativeTarget "Object-C ChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0AD5EB24293D7C00730119 /* Debug */,
+				AA0AD5EC24293D7C00730119 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AAD04060241FF49B0025628C /* Build configuration list for PBXProject "Object-C Challenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
