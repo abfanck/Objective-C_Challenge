@@ -8,6 +8,7 @@
 #import <XCTest/XCTest.h>
 #import "Networking.h"
 #import "MovieDbAPI.h"
+#import "MockURLSession.h"
 
 @interface NetworkingTests : XCTestCase
 
@@ -21,6 +22,7 @@
     // Put setup code here. This method is called before the invocation of each test method in the class.
     [super setUp];
     self.network = Networking.new;
+    self.network.session = MockURLSession.new;
 }
 
 - (void)tearDown {

@@ -13,17 +13,17 @@
 
 @implementation Networking
 
-//MARK:- FetchMovies
+//MARK: - FetchMovies
 
 /// Movies Fetch Function, use this method for fetch popular and now playing movies
 /// @param completionHandler The completion handler array is the movie array
 -(void)fetchMovie:(UrlType)urlType completionHandler:(void (^)(NSMutableArray *array))completionHandler {
-
+    
     //Objeto de local da busca (Remoto)
     NSURL *url = [MovieDbAPI getUrl:urlType];
     
     //Data handle
-    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [[_session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         NSError *err;
         
@@ -48,7 +48,7 @@
     }] resume];
 }
 
-//MARK:- FetchMovieGenres
+//MARK: - FetchMovieGenres
 
 /// Fetch the genres using movie ID
 /// @param movieId Pass the movie id to get movie's genres
@@ -80,7 +80,7 @@
     }] resume];
 }
 
-//MARK:- FetchImageData
+//MARK: - GetImageData
 
 /// Use this to get the image data and return a NSData
 /// @param posterPath Is the movie posterpath (movie.posterpath)
@@ -93,7 +93,7 @@
     return imageData;
 }
 
-//MARK:- FetchSearch
+//MARK: - FetchSearch
 
 -(void)fetchSearch:(NSString *)searchString completionHandler:(void (^)(NSMutableArray *array))completionHandler {
     
