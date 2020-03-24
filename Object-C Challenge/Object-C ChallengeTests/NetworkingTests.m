@@ -6,7 +6,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <Object-C Challenge/Networking/Networking.h>
+#import "Networking.h"
 
 @interface NetworkingTests : XCTestCase
 
@@ -27,17 +27,52 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-    XCTestExpectation *expectation = [self expectationWithDescription:@"asynchronous request"];
+- (void)testFetchPopular {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Popular request"];
     
     [self.network fetchMovie:POPULAR completionHandler:^(NSMutableArray * _Nonnull array) {
-        XCTAssert(array, @"array nil");
+        XCTAssertGreaterThan(array.count, 0);
         [expectation fulfill];
     }];
     
-    [self waitForExpectationsWithTimeout:10 handler:nil];
+    [self waitForExpectationsWithTimeout:5 handler:nil];
+}
+
+- (void)testFetchNowPlaying {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Now Playing request"];
+    
+    [self.network fetchMovie:NOWPLAYING completionHandler:^(NSMutableArray * _Nonnull array) {
+        XCTAssertGreaterThan(array.count, 0);
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:5 handler:nil];
+}
+
+- (void)testFetchMovieGenre {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Genre request"];
+    
+    NSNumber *movieID = [[NSNumber alloc] initWithInt:419704];
+    
+    [self.network fetchMovieGenre:movieID completionHandler:^(NSMutableArray * _Nonnull array) {
+        XCTAssertGreaterThan(array.count, 0);
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:5 handler:nil];
+}
+
+- (void)testFetchSearch {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Search request"];
+    
+    NSString *searchString = @"art";
+    
+    [self.network fetchSearch:searchString completionHandler:^(NSMutableArray * _Nonnull array) {
+        XCTAssertGreaterThan(array.count, 0);
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:5 handler:nil];
 }
 
 @end
