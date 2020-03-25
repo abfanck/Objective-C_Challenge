@@ -21,8 +21,7 @@
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.
     [super setUp];
-    self.network = Networking.new;
-    self.network.session = MockURLSession.new;
+    self.network = [[Networking alloc] initWithSession:MockURLSession.new];
 }
 
 - (void)tearDown {

@@ -33,7 +33,7 @@ NSString *detailsSegue = @"movieDetails";
 
     [self setUpIndicator];
     
-    self.networking = Networking.new;
+    self.networking = [[Networking alloc] initWithSession:NSURLSession.sharedSession];
     
     [self setUpMovies];
     

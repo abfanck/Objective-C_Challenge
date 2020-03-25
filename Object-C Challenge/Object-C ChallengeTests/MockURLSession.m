@@ -13,7 +13,7 @@
 @property (strong, nonatomic) NSURL *lastURL;
 @property (strong, nonatomic) NSData *nextData;
 @property (strong, nonatomic) NSError *nextError;
-@property (strong, nonatomic) MockURLSessionDataTask *nextDataTask;
+@property (nonatomic) id<URLSessionDataTaskProtocol> nextDataTask;
 
 @end
 
@@ -23,7 +23,7 @@
     return [[NSHTTPURLResponse alloc] initWithURL:url statusCode:200 HTTPVersion:@"HTTP/1.1" headerFields:nil];
 }
 
-- (MockURLSessionDataTask *)dataTaskWithURL:(NSURL *)url completionHandler:(void (^)(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error))completionHandler {
+- (id<URLSessionDataTaskProtocol>)dataTaskWithURL:(NSURL *)url completionHandler:(void (^)(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error))completionHandler {
     
     self.lastURL = url;
     

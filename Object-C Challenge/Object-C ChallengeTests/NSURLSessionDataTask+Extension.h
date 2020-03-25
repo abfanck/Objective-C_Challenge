@@ -5,14 +5,14 @@
 //  Created by Arthur Bastos Fanck on 24/03/20.
 //
 
-#import <AppKit/AppKit.h>
-
-
 #import <Foundation/Foundation.h>
+#import "URLSessionDataTaskProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSURLSessionDataTask () : URLSessionDataTaskProtocol
+@interface NSURLSessionDataTask (Extension) <URLSessionDataTaskProtocol>
+
+- (void)resume;
 
 @end
 

@@ -5,11 +5,12 @@
 //  Created by Arthur Bastos Fanck on 24/03/20.
 //
 
-#import <Foundation/Foundation.h>
 #import "NSURLSession+Extension.h"
 
-@implementation NSURLSession
+@implementation NSURLSession (Extension)
 
-<#methods#>
+- (id<URLSessionDataTaskProtocol>)dataTaskWithURL:(NSURL *)url completionHandler:(void (^)(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error))completionHandler {
+    return [self dataTaskWithURL:url completionHandler:completionHandler];
+}
 
 @end

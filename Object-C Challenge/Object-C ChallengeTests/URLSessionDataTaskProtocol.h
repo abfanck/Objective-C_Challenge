@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol URLSessionDataTaskProtocol <NSObject>
+@protocol URLSessionDataTaskProtocol
 
 - (void)resume;
 

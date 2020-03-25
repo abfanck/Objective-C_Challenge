@@ -6,10 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "URLSessionDataTaskProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MockURLSessionDataTask : NSObject
+@interface MockURLSessionDataTask : NSObject <URLSessionDataTaskProtocol>
 
 - (void)resume;
 

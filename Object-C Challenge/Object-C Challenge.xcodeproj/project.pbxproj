@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AA17A1D6242A96E1005538C6 /* MockURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = AA17A1D5242A96E1005538C6 /* MockURLSession.m */; };
-		AA349E49242AA70C005B8A6D /* NSURLSession+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AA349E48242AA70C005B8A6D /* NSURLSession+Extension.m */; };
+		AA349E4C242AA928005B8A6D /* NSURLSessionDataTask+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AA349E4B242AA928005B8A6D /* NSURLSessionDataTask+Extension.m */; };
+		AA349E4F242AA9C2005B8A6D /* NSURLSession+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AA349E4E242AA9C2005B8A6D /* NSURLSession+Extension.m */; };
 		AA49AEC5242948E100C73DD4 /* NetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA49AEC4242948E100C73DD4 /* NetworkingTests.m */; };
 		AA522E0D242AA148000AD546 /* MockURLSessionDataTask.m in Sources */ = {isa = PBXBuildFile; fileRef = AA522E0C242AA148000AD546 /* MockURLSessionDataTask.m */; };
 		AAC30BDC2422BF74006F5AB5 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC30BDB2422BF74006F5AB5 /* Navigation.storyboard */; };
@@ -46,9 +47,10 @@
 		AA0AD5E824293D7C00730119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA17A1D5242A96E1005538C6 /* MockURLSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockURLSession.m; sourceTree = "<group>"; };
 		AA17A1D7242A973C005538C6 /* MockURLSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockURLSession.h; sourceTree = "<group>"; };
-		AA349E46242AA4A7005B8A6D /* NSURLSession+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+Extension.h"; sourceTree = "<group>"; };
-		AA349E47242AA4DE005B8A6D /* NSURLSessionDataTask+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionDataTask+Extension.h"; sourceTree = "<group>"; };
-		AA349E48242AA70C005B8A6D /* NSURLSession+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+Extension.m"; sourceTree = "<group>"; };
+		AA349E4A242AA928005B8A6D /* NSURLSessionDataTask+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionDataTask+Extension.h"; sourceTree = "<group>"; };
+		AA349E4B242AA928005B8A6D /* NSURLSessionDataTask+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLSessionDataTask+Extension.m"; sourceTree = "<group>"; };
+		AA349E4D242AA9C2005B8A6D /* NSURLSession+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+Extension.h"; sourceTree = "<group>"; };
+		AA349E4E242AA9C2005B8A6D /* NSURLSession+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+Extension.m"; sourceTree = "<group>"; };
 		AA49AEC4242948E100C73DD4 /* NetworkingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingTests.m; sourceTree = "<group>"; };
 		AA522E0B242AA148000AD546 /* MockURLSessionDataTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockURLSessionDataTask.h; sourceTree = "<group>"; };
 		AA522E0C242AA148000AD546 /* MockURLSessionDataTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockURLSessionDataTask.m; sourceTree = "<group>"; };
@@ -116,9 +118,10 @@
 				AA522E0C242AA148000AD546 /* MockURLSessionDataTask.m */,
 				AA522E0E242AA1E7000AD546 /* URLSessionProtocol.h */,
 				AA522E0F242AA227000AD546 /* URLSessionDataTaskProtocol.h */,
-				AA349E46242AA4A7005B8A6D /* NSURLSession+Extension.h */,
-				AA349E48242AA70C005B8A6D /* NSURLSession+Extension.m */,
-				AA349E47242AA4DE005B8A6D /* NSURLSessionDataTask+Extension.h */,
+				AA349E4A242AA928005B8A6D /* NSURLSessionDataTask+Extension.h */,
+				AA349E4B242AA928005B8A6D /* NSURLSessionDataTask+Extension.m */,
+				AA349E4D242AA9C2005B8A6D /* NSURLSession+Extension.h */,
+				AA349E4E242AA9C2005B8A6D /* NSURLSession+Extension.m */,
 			);
 			path = "Object-C ChallengeTests";
 			sourceTree = "<group>";
@@ -321,10 +324,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA349E4C242AA928005B8A6D /* NSURLSessionDataTask+Extension.m in Sources */,
+				AA349E4F242AA9C2005B8A6D /* NSURLSession+Extension.m in Sources */,
 				AA17A1D6242A96E1005538C6 /* MockURLSession.m in Sources */,
 				AA522E0D242AA148000AD546 /* MockURLSessionDataTask.m in Sources */,
 				AA49AEC5242948E100C73DD4 /* NetworkingTests.m in Sources */,
-				AA349E49242AA70C005B8A6D /* NSURLSession+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

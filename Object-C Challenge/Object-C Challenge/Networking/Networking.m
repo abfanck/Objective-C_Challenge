@@ -13,6 +13,16 @@
 
 @implementation Networking
 
+//MARK: - Init
+- (instancetype)initWithSession:(id<URLSessionProtocol>)session {
+    
+    self = [super init];
+    if (self) {
+        self.session = session;
+    }
+    return self;
+}
+
 //MARK: - FetchMovies
 
 /// Movies Fetch Function, use this method for fetch popular and now playing movies

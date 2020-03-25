@@ -7,8 +7,25 @@
 
 #import "MockURLSessionDataTask.h"
 
+@interface MockURLSessionDataTask ()
+
+@property (nonatomic) BOOL resumeWasCalled;
+
+@end
+
 @implementation MockURLSessionDataTask
 
-- (void)resume { }
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _resumeWasCalled = NO;
+    }
+    return self;
+}
+
+- (void)resume {
+    _resumeWasCalled = YES;
+}
 
 @end
