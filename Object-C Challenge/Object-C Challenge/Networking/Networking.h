@@ -6,18 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NetworkingProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef enum {
-    POPULAR,
-    NOWPLAYING,
-    SEARCH,
-    GENRE,
-    IMAGE
-} UrlType;
-
-@interface Networking : NSObject
+@interface Networking : NSObject <NetworkingProtocol>
 
 -(void)fetchMovieGenre:(NSNumber *)movieId completionHandler:(void (^)(NSMutableArray *array))completionHandler;;
 -(void)fetchMovie:(UrlType)urlType completionHandler:(void (^)(NSMutableArray *array))completionHandler;

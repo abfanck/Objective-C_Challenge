@@ -8,10 +8,14 @@
 #import <XCTest/XCTest.h>
 #import "Networking.h"
 #import "MovieDbAPI.h"
+#import "NetworkingProtocol.h"
+#import "MockNetworking.h"
+#import "Movie.h"
 
 @interface NetworkingTests : XCTestCase
 
 @property (strong, nonatomic) Networking *network;
+@property (strong, nonatomic) id<NetworkingProtocol> protocolNetworking;
 
 @end
 
@@ -21,6 +25,7 @@
     // Put setup code here. This method is called before the invocation of each test method in the class.
     [super setUp];
     self.network = Networking.new;
+    self.protocolNetworking = MockNetworking.new;
 }
 
 - (void)tearDown {
@@ -158,6 +163,30 @@
     [task resume];
 
     [self waitForExpectationsWithTimeout:10.0 handler:nil];
+}
+
+//MARK: - Mock JSON
+
+- (void)testParseMovie{
+    
+    [self.protocolNetworking fetchMovie:POPULAR completionHandler:^(NSMutableArray * _Nonnull array) {
+        
+        NSMutableArray<Movie *> *movies = array;
+        
+        XCTAssertTrue([movies[0].title isEqualToString:@"Ad Astra"]);
+        XCTAssertFalse([movies[0].title isEqualToString:@"AdAstra"]);
+        
+        XCTAssertTrue([movies[0].posterpath isEqualToString:@"/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg"]);
+        XCTAssertFalse([movies[0].posterpath isEqualToString:@""]);
+        
+        XCTAssertTrue(movies[0].movieId.intValue == 419704);
+        XCTAssertFalse(movies[0].movieId.intValue == 1);
+        
+        XCTAssertTrue(movies[0].voteAverage.doubleValue == 5.9);
+        XCTAssertFalse(movies[0].voteAverage.doubleValue == 8.5);
+        
+    }];
+    
 }
 
 @end

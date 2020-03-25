@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA2D5BBF242BDA10007204B7 /* MockNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D5BBE242BDA10007204B7 /* MockNetworking.m */; };
 		AA49AEC5242948E100C73DD4 /* NetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA49AEC4242948E100C73DD4 /* NetworkingTests.m */; };
+		AA5AD79A242BE05B0010D821 /* genre.json in Resources */ = {isa = PBXBuildFile; fileRef = AB751F3E242BD2DB009A9BB2 /* genre.json */; };
+		AA5AD79B242BE05E0010D821 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = AB751F3C242BD1D4009A9BB2 /* movie.json */; };
 		AAC30BDC2422BF74006F5AB5 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC30BDB2422BF74006F5AB5 /* Navigation.storyboard */; };
 		AAD0406A241FF49B0025628C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD04069241FF49B0025628C /* AppDelegate.m */; };
 		AAD0406D241FF49B0025628C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD0406C241FF49B0025628C /* SceneDelegate.m */; };
@@ -43,6 +46,9 @@
 /* Begin PBXFileReference section */
 		AA0AD5E424293D7C00730119 /* Object-C ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Object-C ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0AD5E824293D7C00730119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA2D5BBC242BD89A007204B7 /* NetworkingProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkingProtocol.h; sourceTree = "<group>"; };
+		AA2D5BBD242BDA10007204B7 /* MockNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockNetworking.h; sourceTree = "<group>"; };
+		AA2D5BBE242BDA10007204B7 /* MockNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockNetworking.m; sourceTree = "<group>"; };
 		AA49AEC4242948E100C73DD4 /* NetworkingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingTests.m; sourceTree = "<group>"; };
 		AAC30BDB2422BF74006F5AB5 /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
 		AAD04065241FF49B0025628C /* Object-C Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Object-C Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,8 +106,6 @@
 		AA0AD5E524293D7C00730119 /* Object-C ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				AB751F3E242BD2DB009A9BB2 /* genre.json */,
-				AB751F3C242BD1D4009A9BB2 /* movie.json */,
 				AA0AD5E824293D7C00730119 /* Info.plist */,
 				AA49AEC4242948E100C73DD4 /* NetworkingTests.m */,
 			);
@@ -188,6 +192,11 @@
 				AB751F1A242555EE009A9BB2 /* MovieDbAPI.m */,
 				AB751F1C24255616009A9BB2 /* Parsing.h */,
 				AB751F1D24255616009A9BB2 /* Parsing.m */,
+				AA2D5BBC242BD89A007204B7 /* NetworkingProtocol.h */,
+				AA2D5BBD242BDA10007204B7 /* MockNetworking.h */,
+				AA2D5BBE242BDA10007204B7 /* MockNetworking.m */,
+				AB751F3E242BD2DB009A9BB2 /* genre.json */,
+				AB751F3C242BD1D4009A9BB2 /* movie.json */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -247,7 +256,7 @@
 		AAD0405D241FF49B0025628C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1140;
 				TargetAttributes = {
 					AA0AD5E324293D7C00730119 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -294,8 +303,10 @@
 			files = (
 				AAC30BDC2422BF74006F5AB5 /* Navigation.storyboard in Resources */,
 				AAFBF3D724229389001ACF5F /* Details.storyboard in Resources */,
+				AA5AD79B242BE05E0010D821 /* movie.json in Resources */,
 				AAD04078241FF49E0025628C /* LaunchScreen.storyboard in Resources */,
 				AB751F1824252AB3009A9BB2 /* SwiftStoryboard.storyboard in Resources */,
+				AA5AD79A242BE05B0010D821 /* genre.json in Resources */,
 				AAD04075241FF49E0025628C /* Assets.xcassets in Resources */,
 				AAD040822421394F0025628C /* Movies.storyboard in Resources */,
 			);
@@ -318,6 +329,7 @@
 			files = (
 				AB751F1E24255616009A9BB2 /* Parsing.m in Sources */,
 				AAD733012421497C007C60CD /* MoviesTableViewController.m in Sources */,
+				AA2D5BBF242BDA10007204B7 /* MockNetworking.m in Sources */,
 				AAFBF3DC242296F4001ACF5F /* DetailsViewController.m in Sources */,
 				AB751F0D24214C51009A9BB2 /* Movie.m in Sources */,
 				AB751F112421538E009A9BB2 /* Genre.m in Sources */,
@@ -443,7 +455,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "${SRCROOT}";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -496,11 +508,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "${SRCROOT}";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
