@@ -26,7 +26,8 @@
 		AB751F1824252AB3009A9BB2 /* SwiftStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB751F1724252AB3009A9BB2 /* SwiftStoryboard.storyboard */; };
 		AB751F1B242555EE009A9BB2 /* MovieDbAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F1A242555EE009A9BB2 /* MovieDbAPI.m */; };
 		AB751F1E24255616009A9BB2 /* Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F1D24255616009A9BB2 /* Parsing.m */; };
-		AB751F3324293FAD009A9BB2 /* Object_C_ChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F25242925D1009A9BB2 /* Object_C_ChallengeTests.m */; };
+		AB751F3D242BD1D4009A9BB2 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = AB751F3C242BD1D4009A9BB2 /* movie.json */; };
+		AB751F3F242BD2DB009A9BB2 /* genre.json in Resources */ = {isa = PBXBuildFile; fileRef = AB751F3E242BD2DB009A9BB2 /* genre.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,9 +75,8 @@
 		AB751F1A242555EE009A9BB2 /* MovieDbAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieDbAPI.m; sourceTree = "<group>"; };
 		AB751F1C24255616009A9BB2 /* Parsing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Parsing.h; sourceTree = "<group>"; };
 		AB751F1D24255616009A9BB2 /* Parsing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Parsing.m; sourceTree = "<group>"; };
-		AB751F23242925D1009A9BB2 /* Object-C ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Object-C ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB751F25242925D1009A9BB2 /* Object_C_ChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Object_C_ChallengeTests.m; sourceTree = "<group>"; };
-		AB751F27242925D1009A9BB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB751F3C242BD1D4009A9BB2 /* movie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
+		AB751F3E242BD2DB009A9BB2 /* genre.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = genre.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,19 +94,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB751F20242925D1009A9BB2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		AA0AD5E524293D7C00730119 /* Object-C ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				AB751F3E242BD2DB009A9BB2 /* genre.json */,
+				AB751F3C242BD1D4009A9BB2 /* movie.json */,
 				AA0AD5E824293D7C00730119 /* Info.plist */,
 				AA49AEC4242948E100C73DD4 /* NetworkingTests.m */,
 			);
@@ -208,15 +203,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		AB751F24242925D1009A9BB2 /* Object-C ChallengeTests */ = {
-			isa = PBXGroup;
-			children = (
-				AB751F25242925D1009A9BB2 /* Object_C_ChallengeTests.m */,
-				AB751F27242925D1009A9BB2 /* Info.plist */,
-			);
-			path = "Object-C ChallengeTests";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -255,24 +241,6 @@
 			productReference = AAD04065241FF49B0025628C /* Object-C Challenge.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AB751F22242925D1009A9BB2 /* Object-C ChallengeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AB751F2C242925D1009A9BB2 /* Build configuration list for PBXNativeTarget "Object-C ChallengeTests" */;
-			buildPhases = (
-				AB751F1F242925D1009A9BB2 /* Sources */,
-				AB751F20242925D1009A9BB2 /* Frameworks */,
-				AB751F21242925D1009A9BB2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AB751F29242925D1009A9BB2 /* PBXTargetDependency */,
-			);
-			name = "Object-C ChallengeTests";
-			productName = "Object-C ChallengeTests";
-			productReference = AB751F23242925D1009A9BB2 /* Object-C ChallengeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -288,10 +256,6 @@
 					AAD04064241FF49B0025628C = {
 						CreatedOnToolsVersion = 11.3.1;
 						LastSwiftMigration = 1130;
-					};
-					AB751F22242925D1009A9BB2 = {
-						CreatedOnToolsVersion = 11.3;
-						TestTargetID = AAD04064241FF49B0025628C;
 					};
 				};
 			};
@@ -319,6 +283,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB751F3D242BD1D4009A9BB2 /* movie.json in Resources */,
+				AB751F3F242BD2DB009A9BB2 /* genre.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,13 +298,6 @@
 				AB751F1824252AB3009A9BB2 /* SwiftStoryboard.storyboard in Resources */,
 				AAD04075241FF49E0025628C /* Assets.xcassets in Resources */,
 				AAD040822421394F0025628C /* Movies.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB751F21242925D1009A9BB2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,14 +328,6 @@
 				AB751F1324252756009A9BB2 /* SwiftViewController.swift in Sources */,
 				AB751F1B242555EE009A9BB2 /* MovieDbAPI.m in Sources */,
 				AAD0406D241FF49B0025628C /* SceneDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB751F1F242925D1009A9BB2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB751F3324293FAD009A9BB2 /* Object_C_ChallengeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,48 +546,6 @@
 			};
 			name = Release;
 		};
-		AB751F2A242925D1009A9BB2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LZ4KUFVTZH;
-				HEADER_SEARCH_PATHS = "${SRCROOT}";
-				INFOPLIST_FILE = "Object-C ChallengeTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "marcus.Object-C-ChallengeTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Object-C Challenge.app/Object-C Challenge";
-			};
-			name = Debug;
-		};
-		AB751F2B242925D1009A9BB2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LZ4KUFVTZH;
-				HEADER_SEARCH_PATHS = "${SRCROOT}";
-				INFOPLIST_FILE = "Object-C ChallengeTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "marcus.Object-C-ChallengeTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Object-C Challenge.app/Object-C Challenge";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -663,15 +572,6 @@
 			buildConfigurations = (
 				AAD0407F241FF49E0025628C /* Debug */,
 				AAD04080241FF49E0025628C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AB751F2C242925D1009A9BB2 /* Build configuration list for PBXNativeTarget "Object-C ChallengeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AB751F2A242925D1009A9BB2 /* Debug */,
-				AB751F2B242925D1009A9BB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
