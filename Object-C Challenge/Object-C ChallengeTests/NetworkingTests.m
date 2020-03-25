@@ -133,8 +133,7 @@
     XCTAssertEqualObjects(url, movieDbApiSearch);
 }
 
-- (void)testDataTask
-{
+- (void)testDataTask {
     XCTestExpectation *expectation = [self expectationWithDescription:@"asynchronous request"];
 
     NSString *searchString = @"art";
