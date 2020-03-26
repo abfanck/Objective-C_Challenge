@@ -25,26 +25,31 @@
     // Put setup code here. This method is called before the invocation of each test method in the class.
     [super setUp];
     
+    // This URLs are the keys to our dictionary with mocked data
     NSURL *popularURL = [MovieDbAPI getUrl:POPULAR];
     NSURL *nowplayingURL = [MovieDbAPI getUrl:NOWPLAYING];
     NSURL *genresURL = [MovieDbAPI getUrl:GENRE string:@"419704"];
     
+    // Path to find our movie.json file and create data out of it
     NSString *moviePath = [[NSBundle bundleForClass:MockNSURLProtocol.class] pathForResource:@"movie" ofType:@"json"];
     NSData *movieData = [[NSData alloc] initWithContentsOfFile:moviePath];
     
+    // Path to find our genre.json file and create data out of it
     NSString *genrePath = [[NSBundle bundleForClass:MockNSURLProtocol.class] pathForResource:@"genre" ofType:@"json"];
     NSData *genreData = [[NSData alloc] initWithContentsOfFile:genrePath];
     
+    // Populate our dictionary with mocked data
     [MockNSURLProtocol.sharedURLs setValue:movieData forKey:popularURL.absoluteString];
     [MockNSURLProtocol.sharedURLs setValue:movieData forKey:nowplayingURL.absoluteString];
     [MockNSURLProtocol.sharedURLs setValue:genreData forKey:genresURL.absoluteString];
     
-    
+    // Create a custom NSURLSession
     NSURLSessionConfiguration *config = NSURLSessionConfiguration.ephemeralSessionConfiguration;
     config.protocolClasses = [[NSArray alloc] initWithObjects:MockNSURLProtocol.class, nil];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    NSURLSession *customSession = [NSURLSession sessionWithConfiguration:config];
     
-    self.network = [[Networking alloc] initWithSession:session];
+    // Init our Networking class with the custom session
+    self.network = [[Networking alloc] initWithSession:customSession];
 }
 
 - (void)tearDown {

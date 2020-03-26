@@ -7,10 +7,12 @@
 
 #import "MockNSURLProtocol.h"
 
+// Dictionary to map the URLs for our mocked data
 static NSMutableDictionary<id, NSData *> *testURLs = nil;
 
 @implementation MockNSURLProtocol
 
+// Make testURLs accessible
 + (NSMutableDictionary<id, NSData *> *)sharedURLs {
     if (testURLs == nil) {
         testURLs = [NSMutableDictionary<id, NSData *> dictionary];

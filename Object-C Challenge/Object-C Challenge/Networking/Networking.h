@@ -19,6 +19,7 @@ typedef enum {
 
 @interface Networking : NSObject
 
+// Dependency injection to make test possible with a custom NSURLSession
 @property NSURLSession *session;
 
 - (instancetype)initWithSession:(NSURLSession *)session;
