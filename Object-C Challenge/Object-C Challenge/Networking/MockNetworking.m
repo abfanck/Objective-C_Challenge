@@ -9,6 +9,7 @@
 #import "Movie.h"
 #import "Parsing.h"
 
+// AMW: Será que isso precisa estar no target do projeto? Ou poderia só estar no target de teste? Assim como os mocks.
 @implementation MockNetworking
 
 - (void)fetchMovie:(UrlType)urlType completionHandler:(nonnull void (^)(NSMutableArray * _Nonnull))completionHandler { 

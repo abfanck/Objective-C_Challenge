@@ -8,24 +8,19 @@
 #import <XCTest/XCTest.h>
 #import "Networking.h"
 #import "MovieDbAPI.h"
-#import "NetworkingProtocol.h"
-#import "MockNetworking.h"
 #import "Movie.h"
 
 @interface NetworkingTests : XCTestCase
-
-@property (strong, nonatomic) Networking *network;
-@property (strong, nonatomic) id<NetworkingProtocol> protocolNetworking;
 
 @end
 
 @implementation NetworkingTests
 
 - (void)setUp {
+    
     // Put setup code here. This method is called before the invocation of each test method in the class.
     [super setUp];
-    self.network = Networking.new;
-    self.protocolNetworking = MockNetworking.new;
+//    self.protocolNetworking = MockNetworking.new;
 }
 
 - (void)tearDown {
@@ -33,10 +28,13 @@
     [super tearDown];
 }
 
+// AMW: Nos tests testFetchSearch, testFetchNowPlaying, testFetchMovieGenre e testFetchPopular, vocês precisam usar mocks. Por exemplo, e se em algum momento não tiver nenhum filme com “art” (na pesquisa, por exemplo). Com o mock vocês sabem exatamente quantos vem e aí podem conferir pela quantidade exata.
 - (void)testFetchPopular {
+
     XCTestExpectation *expectation = [self expectationWithDescription:@"Popular request"];
     
-    [self.network fetchMovie:POPULAR completionHandler:^(NSMutableArray * _Nonnull array) {
+    Networking *network = Networking.new;
+    [network fetchMovie:POPULAR completionHandler:^(NSMutableArray * _Nonnull array) {
         XCTAssertGreaterThan(array.count, 0);
         [expectation fulfill];
     }];
@@ -47,7 +45,8 @@
 - (void)testFetchNowPlaying {
     XCTestExpectation *expectation = [self expectationWithDescription:@"Now Playing request"];
     
-    [self.network fetchMovie:NOWPLAYING completionHandler:^(NSMutableArray * _Nonnull array) {
+    Networking *network = Networking.new;
+    [network fetchMovie:NOWPLAYING completionHandler:^(NSMutableArray * _Nonnull array) {
         XCTAssertGreaterThan(array.count, 0);
         [expectation fulfill];
     }];
@@ -60,7 +59,8 @@
     
     NSNumber *movieID = [[NSNumber alloc] initWithInt:419704];
     
-    [self.network fetchMovieGenre:movieID completionHandler:^(NSMutableArray * _Nonnull array) {
+    Networking *network = Networking.new;
+    [network fetchMovieGenre:movieID completionHandler:^(NSMutableArray * _Nonnull array) {
         XCTAssertGreaterThan(array.count, 0);
         [expectation fulfill];
     }];
@@ -73,7 +73,8 @@
     
     NSString *searchString = @"art";
     
-    [self.network fetchSearch:searchString completionHandler:^(NSMutableArray * _Nonnull array) {
+    Networking *network = Networking.new;
+    [network fetchSearch:searchString completionHandler:^(NSMutableArray * _Nonnull array) {
         XCTAssertGreaterThan(array.count, 0);
         [expectation fulfill];
     }];
@@ -99,11 +100,12 @@
     XCTAssertEqualObjects(popularUrl, movieDbApiNowPlaying);
 }
 
+// AMW: Nos tests testGetUrlGenre poderia só colocar a URL esperada, sem fazer a concatenação. Se não me engano, e se tu quiser, da pra comparar o .absoluteString do NSURL.
 -(void)testGetUrlGenre{
     
     NSNumber *movieID = [[NSNumber alloc] initWithInt:419704];
     
-    NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%@?api_key=4c86680eeadb3c625a7f347b2ce6e135&language=en-US", movieID.stringValue];
+    NSString *urlString = @"https://api.themoviedb.org/3/movie/419704?api_key=4c86680eeadb3c625a7f347b2ce6e135&language=en-US";
     
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     
@@ -138,6 +140,7 @@
     XCTAssertEqualObjects(url, movieDbApiSearch);
 }
 
+// AMW: O que estamos testando com testDataTask? Se estamos testando se chamando dataTaskWithURL, ele retorna um data, acho que não precisamos desse teste. Se é um método é provido pela Apple, não precisamos testar :)
 - (void)testDataTask {
     XCTestExpectation *expectation = [self expectationWithDescription:@"asynchronous request"];
 
@@ -167,27 +170,28 @@
 
 //MARK: - Mock JSON
 
-- (void)testParseMovie{
-    
-    [self.protocolNetworking fetchMovie:POPULAR completionHandler:^(NSMutableArray * _Nonnull array) {
-        
-        NSMutableArray<Movie *> *movies = array;
-        
-        XCTAssertTrue([movies[0].title isEqualToString:@"Ad Astra"]);
-        XCTAssertFalse([movies[0].title isEqualToString:@"AdAstra"]);
-        
-        XCTAssertTrue([movies[0].posterpath isEqualToString:@"/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg"]);
-        XCTAssertFalse([movies[0].posterpath isEqualToString:@""]);
-        
-        XCTAssertTrue(movies[0].movieId.intValue == 419704);
-        XCTAssertFalse(movies[0].movieId.intValue == 1);
-        
-        XCTAssertTrue(movies[0].voteAverage.doubleValue == 5.9);
-        XCTAssertFalse(movies[0].voteAverage.doubleValue == 8.5);
-        
-    }];
-    
-}
+// AWM: Como você tem o parsing sendo feito por uma classe separada, eu faria o teste testParseMovie chamar o método do Parsing.
+//- (void)testParseMovie{
+//
+//    [self.protocolNetworking fetchMovie:POPULAR completionHandler:^(NSMutableArray * _Nonnull array) {
+//
+//        NSMutableArray<Movie *> *movies = array;
+//
+//        XCTAssertTrue([movies[0].title isEqualToString:@"Ad Astra"]);
+//        XCTAssertFalse([movies[0].title isEqualToString:@"AdAstra"]);
+//
+//        XCTAssertTrue([movies[0].posterpath isEqualToString:@"/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg"]);
+//        XCTAssertFalse([movies[0].posterpath isEqualToString:@""]);
+//
+//        XCTAssertTrue(movies[0].movieId.intValue == 419704);
+//        XCTAssertFalse(movies[0].movieId.intValue == 1);
+//
+//        XCTAssertTrue(movies[0].voteAverage.doubleValue == 5.9);
+//        XCTAssertFalse(movies[0].voteAverage.doubleValue == 8.5);
+//
+//    }];
+//
+//}
 
 @end
 

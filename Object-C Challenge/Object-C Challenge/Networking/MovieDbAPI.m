@@ -16,6 +16,7 @@
     
     switch (urlType) {
         case POPULAR:
+            //AMW: Não seria melhor que a nossa base URL (https://api.themoviedb.org/3) fosse uma constante? Assim, caso ela mude, não precisamos mudar em todos os lugares que estão usando ela. Faria o mesmo para a imagem.
             urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/popular?api_key=4c86680eeadb3c625a7f347b2ce6e135&language=en-US&page=1"];
             break;
         case NOWPLAYING:

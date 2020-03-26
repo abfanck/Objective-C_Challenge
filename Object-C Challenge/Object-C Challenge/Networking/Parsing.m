@@ -33,6 +33,8 @@ static @implementation Parsing
         movie.overview = overview;
         movie.posterpath = posterPath;
         movie.voteAverage = voteAverage;
+        
+        // AMW: Será que é o Parsing que chama o Networking para buscar as imagens?
         movie.imageData = [Networking getImageData:movie.posterpath];
         
         //Adiciona filme no array

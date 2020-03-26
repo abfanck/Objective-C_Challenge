@@ -11,6 +11,8 @@
 #import "Parsing.h"
 #import "MovieDbAPI.h"
 
+// AMW: O app está demorando para mostrar os filmes, porque está buscando as imagens para toda a lista. Será que conseguimos mudar para buscar a imagem para o usuário somente quando a célula estiver visível?
+
 @implementation Networking
 
 //MARK:- FetchMovies

@@ -29,8 +29,14 @@
 		AB751F1824252AB3009A9BB2 /* SwiftStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB751F1724252AB3009A9BB2 /* SwiftStoryboard.storyboard */; };
 		AB751F1B242555EE009A9BB2 /* MovieDbAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F1A242555EE009A9BB2 /* MovieDbAPI.m */; };
 		AB751F1E24255616009A9BB2 /* Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F1D24255616009A9BB2 /* Parsing.m */; };
-		AB751F3D242BD1D4009A9BB2 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = AB751F3C242BD1D4009A9BB2 /* movie.json */; };
-		AB751F3F242BD2DB009A9BB2 /* genre.json in Resources */ = {isa = PBXBuildFile; fileRef = AB751F3E242BD2DB009A9BB2 /* genre.json */; };
+		C74DF1DC242C014E00CC7550 /* NSURLSession+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = C74DF1DB242C014E00CC7550 /* NSURLSession+Swizzling.m */; };
+		C74DF1E2242C090100CC7550 /* NSString+SHA1.m in Sources */ = {isa = PBXBuildFile; fileRef = C74DF1E0242C090100CC7550 /* NSString+SHA1.m */; };
+		C74DF1E8242C175600CC7550 /* 89fbdef3776f465e689e09e7b69979013deb9069.json in Resources */ = {isa = PBXBuildFile; fileRef = C74DF1DD242C037F00CC7550 /* 89fbdef3776f465e689e09e7b69979013deb9069.json */; };
+		C74DF1E9242C29F000CC7550 /* MovieDbAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F1A242555EE009A9BB2 /* MovieDbAPI.m */; };
+		C74DF1EA242C29F200CC7550 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F0824213843009A9BB2 /* Networking.m */; };
+		C74DF1EB242C29FD00CC7550 /* Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F1D24255616009A9BB2 /* Parsing.m */; };
+		C74DF1EC242C2A0900CC7550 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F0C24214C51009A9BB2 /* Movie.m */; };
+		C74DF1ED242C2A0C00CC7550 /* Genre.m in Sources */ = {isa = PBXBuildFile; fileRef = AB751F102421538E009A9BB2 /* Genre.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +89,11 @@
 		AB751F1D24255616009A9BB2 /* Parsing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Parsing.m; sourceTree = "<group>"; };
 		AB751F3C242BD1D4009A9BB2 /* movie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
 		AB751F3E242BD2DB009A9BB2 /* genre.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = genre.json; sourceTree = "<group>"; };
+		C74DF1DA242C014E00CC7550 /* NSURLSession+Swizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+Swizzling.h"; sourceTree = "<group>"; };
+		C74DF1DB242C014E00CC7550 /* NSURLSession+Swizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+Swizzling.m"; sourceTree = "<group>"; };
+		C74DF1DD242C037F00CC7550 /* 89fbdef3776f465e689e09e7b69979013deb9069.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 89fbdef3776f465e689e09e7b69979013deb9069.json; sourceTree = "<group>"; };
+		C74DF1E0242C090100CC7550 /* NSString+SHA1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SHA1.m"; sourceTree = "<group>"; };
+		C74DF1E1242C090100CC7550 /* NSString+SHA1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SHA1.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +119,11 @@
 			children = (
 				AA0AD5E824293D7C00730119 /* Info.plist */,
 				AA49AEC4242948E100C73DD4 /* NetworkingTests.m */,
+				C74DF1DA242C014E00CC7550 /* NSURLSession+Swizzling.h */,
+				C74DF1DB242C014E00CC7550 /* NSURLSession+Swizzling.m */,
+				C74DF1E1242C090100CC7550 /* NSString+SHA1.h */,
+				C74DF1E0242C090100CC7550 /* NSString+SHA1.m */,
+				C74DF1DD242C037F00CC7550 /* 89fbdef3776f465e689e09e7b69979013deb9069.json */,
 			);
 			path = "Object-C ChallengeTests";
 			sourceTree = "<group>";
@@ -260,7 +276,6 @@
 				TargetAttributes = {
 					AA0AD5E324293D7C00730119 = {
 						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = AAD04064241FF49B0025628C;
 					};
 					AAD04064241FF49B0025628C = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -292,8 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB751F3D242BD1D4009A9BB2 /* movie.json in Resources */,
-				AB751F3F242BD2DB009A9BB2 /* genre.json in Resources */,
+				C74DF1E8242C175600CC7550 /* 89fbdef3776f465e689e09e7b69979013deb9069.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +333,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C74DF1EB242C29FD00CC7550 /* Parsing.m in Sources */,
 				AA49AEC5242948E100C73DD4 /* NetworkingTests.m in Sources */,
+				C74DF1EC242C2A0900CC7550 /* Movie.m in Sources */,
+				C74DF1ED242C2A0C00CC7550 /* Genre.m in Sources */,
+				C74DF1EA242C29F200CC7550 /* Networking.m in Sources */,
+				C74DF1E2242C090100CC7550 /* NSString+SHA1.m in Sources */,
+				C74DF1DC242C014E00CC7550 /* NSURLSession+Swizzling.m in Sources */,
+				C74DF1E9242C29F000CC7550 /* MovieDbAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +390,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V4HVD5P383;
 				INFOPLIST_FILE = "Object-C ChallengeTests/Info.plist";
@@ -381,7 +401,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "academy.am.Object-C-ChallengeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Object-C Challenge.app/Object-C Challenge";
 			};
 			name = Debug;
 		};
@@ -389,7 +408,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V4HVD5P383;
 				INFOPLIST_FILE = "Object-C ChallengeTests/Info.plist";
@@ -401,7 +419,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "academy.am.Object-C-ChallengeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Object-C Challenge.app/Object-C Challenge";
 			};
 			name = Release;
 		};

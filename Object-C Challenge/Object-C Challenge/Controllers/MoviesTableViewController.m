@@ -80,6 +80,7 @@ NSString *detailsSegue = @"movieDetails";
     if (self.isSearching) {
         return 1;
     } else {
+        // AMW: 🤔 Se não tem movies em um dos dois, não mostra nenhum?
         if (self.nowPlaying.count == 0 || self.popularMovies.count == 0) {
             return 0;
         } else {
@@ -92,6 +93,7 @@ NSString *detailsSegue = @"movieDetails";
     if (self.isSearching) {
         return self.searchMovies.count;
     } else {
+        // AMW: Será que para identificar as seções poderíamos usar um enum para ficar mais legível?
         if (section == 0) {
             if (self.popularMovies.count > 2) {
                 return 2;
@@ -136,6 +138,7 @@ NSString *detailsSegue = @"movieDetails";
     label.textColor = UIColor.blackColor;
     
     if (self.isSearching) {
+        // AMW: return nil?
         label.text = @"";
     } else {
         if (section == 0) {
