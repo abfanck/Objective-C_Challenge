@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Movie : NSObject
 
+- (instancetype)initWithTitle:(NSString *)title posterPath:(NSString *)posterPath movieId:(NSNumber *)movieId voteAverage:(NSNumber *)voteAverage;
+
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *overview;
 @property (strong, nonatomic) NSString *posterpath;

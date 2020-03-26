@@ -9,4 +9,16 @@
 
 @implementation Movie
 
+- (instancetype)initWithTitle:(NSString *)title posterPath:(NSString *)posterPath movieId:(NSNumber *)movieId voteAverage:(NSNumber *)voteAverage;
+{
+    self = [super init];
+    if (self) {
+        self.title = title;
+        self.posterpath = posterPath;
+        self.movieId = movieId;
+        self.voteAverage = voteAverage;
+    }
+    return self;
+}
+
 @end

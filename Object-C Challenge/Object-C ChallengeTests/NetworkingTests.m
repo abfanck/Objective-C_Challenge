@@ -11,6 +11,7 @@
 #import "MockNSURLProtocol.h"
 #import "Movie.h"
 #import "Genre.h"
+#import "Parsing.h"
 
 @interface NetworkingTests : XCTestCase
 
@@ -171,6 +172,30 @@
     XCTAssertEqualObjects(url, movieDbApiSearch);
 }
 
+-(void)testParsingMovies {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Popular request"];
 
+    Movie *movie1 = [[Movie alloc] initWithTitle:@"Ad Astra" posterPath:@"/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg" movieId:@419704 voteAverage:@5.9];
+    Movie *movie2 = [[Movie alloc] initWithTitle:@"Bloodshot" posterPath:@"/8WUVHemHFH2ZIP6NWkwlHWsyrEL.jpg" movieId:@338762 voteAverage:@6.4];
+    
+    NSMutableArray <Movie *> *fakeMovies = NSMutableArray.new;
+    [fakeMovies addObject:movie1];
+    [fakeMovies addObject:movie2];
+    
+    [self.network fetchMovie:POPULAR completionHandler:^(NSMutableArray * _Nonnull array) {
+        
+        NSArray <Movie *> *parsedMovie = array;
+        
+        for (int i=0; i<fakeMovies.count; i++) {
+            XCTAssertTrue([fakeMovies[i].title isEqualToString:parsedMovie[i].title]);
+            XCTAssertTrue([fakeMovies[i].posterpath isEqualToString:parsedMovie[i].posterpath]);
+            XCTAssertTrue([fakeMovies[i].movieId isEqualToNumber:parsedMovie[i].movieId]);
+            XCTAssertTrue([fakeMovies[i].voteAverage isEqualToNumber:parsedMovie[i].voteAverage]);
+        }
+        
+        [expectation fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
+}
 
 @end
