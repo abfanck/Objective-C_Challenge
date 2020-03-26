@@ -120,7 +120,7 @@
     NSURL *url = [MovieDbAPI getUrl:SEARCH string:searchString];
     
     //Data handle
-    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [[_session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         NSError *err;
         

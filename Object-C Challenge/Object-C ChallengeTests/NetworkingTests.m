@@ -9,6 +9,8 @@
 #import "Networking.h"
 #import "MovieDbAPI.h"
 #import "MockNSURLProtocol.h"
+#import "Movie.h"
+#import "Genre.h"
 
 @interface NetworkingTests : XCTestCase
 
@@ -24,16 +26,23 @@
     
     NSURL *popularURL = [MovieDbAPI getUrl:POPULAR];
     NSURL *nowplayingURL = [MovieDbAPI getUrl:NOWPLAYING];
+    NSURL *genresURL = [MovieDbAPI getUrl:GENRE string:@"419704"];
     
-    NSString *path = [[NSBundle bundleForClass:MockNSURLProtocol.class] pathForResource:@"movie" ofType:@"json"];
-    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+    NSString *moviePath = [[NSBundle bundleForClass:MockNSURLProtocol.class] pathForResource:@"movie" ofType:@"json"];
+    NSData *movieData = [[NSData alloc] initWithContentsOfFile:moviePath];
     
-    [MockNSURLProtocol.sharedURLs setValue:data forKey:popularURL.absoluteString];
-    [MockNSURLProtocol.sharedURLs setValue:data forKey:nowplayingURL.absoluteString];
+    NSString *genrePath = [[NSBundle bundleForClass:MockNSURLProtocol.class] pathForResource:@"genre" ofType:@"json"];
+    NSData *genreData = [[NSData alloc] initWithContentsOfFile:genrePath];
+    
+    [MockNSURLProtocol.sharedURLs setValue:movieData forKey:popularURL.absoluteString];
+    [MockNSURLProtocol.sharedURLs setValue:movieData forKey:nowplayingURL.absoluteString];
+    [MockNSURLProtocol.sharedURLs setValue:genreData forKey:genresURL.absoluteString];
+    
     
     NSURLSessionConfiguration *config = NSURLSessionConfiguration.ephemeralSessionConfiguration;
     config.protocolClasses = [[NSArray alloc] initWithObjects:MockNSURLProtocol.class, nil];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
     self.network = [[Networking alloc] initWithSession:session];
 }
 
@@ -47,7 +56,14 @@
     XCTestExpectation *expectation = [self expectationWithDescription:@"Popular request"];
     
     [self.network fetchMovie:POPULAR completionHandler:^(NSMutableArray * _Nonnull array) {
-        XCTAssertGreaterThan(array.count, 0);
+        
+        NSArray<Movie *> *movies = array;
+        XCTAssertEqual(movies.count, 2);
+        XCTAssertTrue([movies[0].title isEqualToString:@"Ad Astra"]);
+        XCTAssertTrue(movies[0].movieId.intValue == 419704);
+        XCTAssertTrue([movies[0].posterpath isEqualToString:@"/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg"]);
+        XCTAssertTrue(movies[0].voteAverage.doubleValue == 5.9);
+        
         [expectation fulfill];
     }];
     
@@ -58,7 +74,14 @@
     XCTestExpectation *expectation = [self expectationWithDescription:@"Now Playing request"];
     
     [self.network fetchMovie:NOWPLAYING completionHandler:^(NSMutableArray * _Nonnull array) {
-        XCTAssertGreaterThan(array.count, 0);
+        
+        NSArray<Movie *> *movies = array;
+        XCTAssertEqual(movies.count, 2);
+        XCTAssertTrue([movies[1].title isEqualToString:@"Bloodshot"]);
+        XCTAssertTrue(movies[1].movieId.intValue == 338762);
+        XCTAssertTrue([movies[1].posterpath isEqualToString:@"/8WUVHemHFH2ZIP6NWkwlHWsyrEL.jpg"]);
+        XCTAssertTrue(movies[1].voteAverage.doubleValue == 6.4);
+        
         [expectation fulfill];
     }];
     
@@ -71,21 +94,20 @@
     NSNumber *movieID = [[NSNumber alloc] initWithInt:419704];
     
     [self.network fetchMovieGenre:movieID completionHandler:^(NSMutableArray * _Nonnull array) {
-        XCTAssertGreaterThan(array.count, 0);
-        NSLog(@"%@", array.description);
-        [expectation fulfill];
-    }];
-    
-    [self waitForExpectationsWithTimeout:10 handler:nil];
-}
-
-- (void)testFetchSearch {
-    XCTestExpectation *expectation = [self expectationWithDescription:@"Search request"];
-    
-    NSString *searchString = @"art";
-    
-    [self.network fetchSearch:searchString completionHandler:^(NSMutableArray * _Nonnull array) {
-        XCTAssertGreaterThan(array.count, 0);
+        
+        NSArray<Genre *> *genres = array;
+        
+        XCTAssertTrue(genres[0].genreId.intValue == 878);
+        XCTAssertTrue([genres[0].name isEqualToString:@"Science Fiction"]);
+        XCTAssertTrue(genres[1].genreId.intValue == 18);
+        XCTAssertTrue([genres[1].name isEqualToString:@"Drama"]);
+        XCTAssertTrue(genres[2].genreId.intValue == 53);
+        XCTAssertTrue([genres[2].name isEqualToString:@"Thriller"]);
+        XCTAssertTrue(genres[3].genreId.intValue == 12);
+        XCTAssertTrue([genres[3].name isEqualToString:@"Adventure"]);
+        XCTAssertTrue(genres[4].genreId.intValue == 9648);
+        XCTAssertTrue([genres[4].name isEqualToString:@"Mystery"]);
+        
         [expectation fulfill];
     }];
     
@@ -114,7 +136,7 @@
     
     NSNumber *movieID = [[NSNumber alloc] initWithInt:419704];
     
-    NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%@?api_key=4c86680eeadb3c625a7f347b2ce6e135&language=en-US", movieID.stringValue];
+    NSString *urlString = @"https://api.themoviedb.org/3/movie/419704?api_key=4c86680eeadb3c625a7f347b2ce6e135&language=en-US";
     
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     
@@ -127,7 +149,7 @@
     
     NSString *posterPath = @"/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg";
     
-    NSString *urlString = [NSString stringWithFormat:@"https:image.tmdb.org/t/p/w500/%@", posterPath];
+    NSString *urlString = @"https:image.tmdb.org/t/p/w500//xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg";
     
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     
@@ -140,7 +162,7 @@
     
     NSString *searchString = @"art";
     
-    NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/search/movie?api_key=4c86680eeadb3c625a7f347b2ce6e135&language=en-US&query=%@&page=1&include_adult=false", searchString];
+    NSString *urlString = @"https://api.themoviedb.org/3/search/movie?api_key=4c86680eeadb3c625a7f347b2ce6e135&language=en-US&query=art&page=1&include_adult=false";
     
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     
@@ -149,32 +171,6 @@
     XCTAssertEqualObjects(url, movieDbApiSearch);
 }
 
-- (void)testDataTask
-{
-    XCTestExpectation *expectation = [self expectationWithDescription:@"asynchronous request"];
 
-    NSString *searchString = @"art";
-    NSURL *url = [MovieDbAPI getUrl:SEARCH string:searchString];
-    
-    NSURLSessionTask *task = [NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        XCTAssertNil(error, @"dataTaskWithURL error %@", error);
-
-        if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
-            NSInteger statusCode = [(NSHTTPURLResponse *) response statusCode];
-            XCTAssertEqual(statusCode, 200, @"status code was not 200; was %ld", statusCode);
-        }
-
-        XCTAssert(data, @"data nil");
-
-        // do additional tests on the contents of the `data` object here, if you want
-
-        // when all done, Fulfill the expectation
-
-        [expectation fulfill];
-    }];
-    [task resume];
-
-    [self waitForExpectationsWithTimeout:10.0 handler:nil];
-}
 
 @end
