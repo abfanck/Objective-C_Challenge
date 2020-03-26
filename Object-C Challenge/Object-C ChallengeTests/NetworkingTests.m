@@ -22,9 +22,14 @@
     // Put setup code here. This method is called before the invocation of each test method in the class.
     [super setUp];
     
-    NSURL *url = [MovieDbAPI getUrl:POPULAR];
-    NSData *data = [[NSData alloc] initWithContentsOfFile:@"movie.json"];
-    [MockNSURLProtocol.sharedURLs setValue:data forKey:url.absoluteString];
+    NSURL *popularURL = [MovieDbAPI getUrl:POPULAR];
+    NSURL *nowplayingURL = [MovieDbAPI getUrl:NOWPLAYING];
+    
+    NSString *path = [[NSBundle bundleForClass:MockNSURLProtocol.class] pathForResource:@"movie" ofType:@"json"];
+    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+    
+    [MockNSURLProtocol.sharedURLs setValue:data forKey:popularURL.absoluteString];
+    [MockNSURLProtocol.sharedURLs setValue:data forKey:nowplayingURL.absoluteString];
     
     NSURLSessionConfiguration *config = NSURLSessionConfiguration.ephemeralSessionConfiguration;
     config.protocolClasses = [[NSArray alloc] initWithObjects:MockNSURLProtocol.class, nil];
@@ -35,6 +40,7 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+    [MockNSURLProtocol.sharedURLs removeAllObjects];
 }
 
 - (void)testFetchPopular {
@@ -66,6 +72,7 @@
     
     [self.network fetchMovieGenre:movieID completionHandler:^(NSMutableArray * _Nonnull array) {
         XCTAssertGreaterThan(array.count, 0);
+        NSLog(@"%@", array.description);
         [expectation fulfill];
     }];
     

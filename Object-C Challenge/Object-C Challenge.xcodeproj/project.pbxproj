@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA134DCB242C43CD00549821 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = AA134DC9242C43CC00549821 /* movie.json */; };
+		AA134DCC242C43CD00549821 /* genre.json in Resources */ = {isa = PBXBuildFile; fileRef = AA134DCA242C43CD00549821 /* genre.json */; };
 		AA2D31D9242C1FE0009B993C /* MockNSURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D31D8242C1FE0009B993C /* MockNSURLProtocol.m */; };
 		AA49AEC5242948E100C73DD4 /* NetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA49AEC4242948E100C73DD4 /* NetworkingTests.m */; };
 		AAC30BDC2422BF74006F5AB5 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC30BDB2422BF74006F5AB5 /* Navigation.storyboard */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		AA0AD5E424293D7C00730119 /* Object-C ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Object-C ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0AD5E824293D7C00730119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA134DC9242C43CC00549821 /* movie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
+		AA134DCA242C43CD00549821 /* genre.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = genre.json; sourceTree = "<group>"; };
 		AA2D31D7242C1FE0009B993C /* MockNSURLProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockNSURLProtocol.h; sourceTree = "<group>"; };
 		AA2D31D8242C1FE0009B993C /* MockNSURLProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockNSURLProtocol.m; sourceTree = "<group>"; };
 		AA49AEC4242948E100C73DD4 /* NetworkingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingTests.m; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 		AA0AD5E524293D7C00730119 /* Object-C ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				AA134DCA242C43CD00549821 /* genre.json */,
+				AA134DC9242C43CC00549821 /* movie.json */,
 				AA0AD5E824293D7C00730119 /* Info.plist */,
 				AA49AEC4242948E100C73DD4 /* NetworkingTests.m */,
 				AA2D31D7242C1FE0009B993C /* MockNSURLProtocol.h */,
@@ -282,6 +288,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA134DCB242C43CD00549821 /* movie.json in Resources */,
+				AA134DCC242C43CD00549821 /* genre.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
