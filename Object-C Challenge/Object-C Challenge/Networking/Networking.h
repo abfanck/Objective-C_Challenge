@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MockURLSession.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,14 +19,13 @@ typedef enum {
 
 @interface Networking : NSObject
 
-@property (nonatomic) id<URLSessionProtocol> session;
+@property NSURLSession *session;
 
+- (instancetype)initWithSession:(NSURLSession *)session;
 -(void)fetchMovieGenre:(NSNumber *)movieId completionHandler:(void (^)(NSMutableArray *array))completionHandler;;
 -(void)fetchMovie:(UrlType)urlType completionHandler:(void (^)(NSMutableArray *array))completionHandler;
 +(NSData *)getImageData:(NSString *)posterPath;
 -(void)fetchSearch:(NSString *)searchString completionHandler:(void (^)(NSMutableArray *array))completionHandler;
-
-- (instancetype)initWithSession:(id<URLSessionProtocol>)session;
 
 @end
 

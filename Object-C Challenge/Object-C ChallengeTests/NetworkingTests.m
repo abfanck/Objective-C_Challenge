@@ -8,7 +8,7 @@
 #import <XCTest/XCTest.h>
 #import "Networking.h"
 #import "MovieDbAPI.h"
-#import "MockURLSession.h"
+#import "MockNSURLProtocol.h"
 
 @interface NetworkingTests : XCTestCase
 
@@ -21,7 +21,15 @@
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.
     [super setUp];
-    self.network = [[Networking alloc] initWithSession:MockURLSession.new];
+    
+    NSURL *url = [MovieDbAPI getUrl:POPULAR];
+    NSData *data = [[NSData alloc] initWithContentsOfFile:@"movie.json"];
+    [MockNSURLProtocol.sharedURLs setValue:data forKey:url.absoluteString];
+    
+    NSURLSessionConfiguration *config = NSURLSessionConfiguration.ephemeralSessionConfiguration;
+    config.protocolClasses = [[NSArray alloc] initWithObjects:MockNSURLProtocol.class, nil];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    self.network = [[Networking alloc] initWithSession:session];
 }
 
 - (void)tearDown {

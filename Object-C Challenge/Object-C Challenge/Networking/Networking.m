@@ -13,12 +13,22 @@
 
 @implementation Networking
 
-//MARK: - Init
-- (instancetype)initWithSession:(id<URLSessionProtocol>)session {
-    
+//MARK: - Inits
+
+- (instancetype)init
+{
     self = [super init];
     if (self) {
-        self.session = session;
+        _session = NSURLSession.sharedSession;
+    }
+    return self;
+}
+
+- (instancetype)initWithSession:(NSURLSession *)session
+{
+    self = [super init];
+    if (self) {
+        _session = session;
     }
     return self;
 }
