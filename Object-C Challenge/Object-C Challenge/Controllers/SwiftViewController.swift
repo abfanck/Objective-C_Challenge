@@ -51,10 +51,6 @@ extension SwiftViewController: UITableViewDelegate, UITableViewDataSource {
         DispatchQueue.main.async {
             cell.posterImage?.image = UIImage(data: currentMovie?.imageData ?? Data())
         }
-//        NSString *title = [movies[indexPath.row] title];
-//        NSString *overview = [movies[indexPath.row] overview];
-//        NSString *voteAverage = [[movies[indexPath.row] voteAverage] stringValue];
-//        NSData *posterData = [movies[indexPath.row] imageData];
         
         return cell
     }
