@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="30x-IH-JFF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Swift View Controller-->
+        <scene sceneID="lcC-4d-R9U">
+            <objects>
+                <viewController id="30x-IH-JFF" customClass="SwiftViewController" customModule="Object_C_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y1S-hl-jwj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DxD-69-xep">
+                                <rect key="frame" x="50" y="244" width="314" height="418"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bGV-hF-BdK" firstAttribute="bottom" secondItem="DxD-69-xep" secondAttribute="bottom" constant="200" id="1Ok-BM-nCP"/>
+                            <constraint firstItem="DxD-69-xep" firstAttribute="top" secondItem="bGV-hF-BdK" secondAttribute="top" constant="200" id="Vq4-1X-fNB"/>
+                            <constraint firstItem="DxD-69-xep" firstAttribute="leading" secondItem="bGV-hF-BdK" secondAttribute="leading" constant="50" id="qYx-OW-IpZ"/>
+                            <constraint firstItem="bGV-hF-BdK" firstAttribute="trailing" secondItem="DxD-69-xep" secondAttribute="trailing" constant="50" id="y82-IT-LQ0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bGV-hF-BdK"/>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="DxD-69-xep" id="dcn-Ej-aYF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tI9-VB-2X3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="71" y="82"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,24 @@
+{
+    "genres":[
+      {
+         "id":878,
+         "name":"Science Fiction"
+      },
+      {
+         "id":18,
+         "name":"Drama"
+      },
+      {
+         "id":53,
+         "name":"Thriller"
+      },
+      {
+         "id":12,
+         "name":"Adventure"
+      },
+      {
+         "id":9648,
+         "name":"Mystery"
+      }
+    ]
+}
