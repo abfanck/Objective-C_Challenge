@@ -11,5 +11,6 @@
 #import "Movie.h"
 #import "Networking.h"
 #import "Genre.h"
+#import "MoviesTableViewCell.h"
 
 #endif /* Object_C_Challenge_Bridging_Header_h */
