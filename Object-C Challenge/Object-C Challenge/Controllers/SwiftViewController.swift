@@ -8,7 +8,6 @@
 import UIKit
 
 class SwiftViewController: UIViewController {
-    @IBOutlet weak var image: UIImageView!
 
     var networking: Networking?
     var movies: [Movie]?
@@ -25,10 +24,15 @@ class SwiftViewController: UIViewController {
             guard let self = self else {return}
 
             self.movies = array as? [Movie]
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         })
 
         tableView.delegate = self
         tableView.dataSource = self
+        print("a")
     }
 }
 
@@ -44,13 +48,10 @@ extension SwiftViewController: UITableViewDelegate, UITableViewDataSource {
         
         let currentMovie = movies?[indexPath.row]
         
-        cell.textLabel?.text = currentMovie?.title
+        cell.titleLabel?.text = currentMovie?.title
         cell.overviewLabel?.text = currentMovie?.overview
-        cell.voteAverageLabel?.text = currentMovie?.voteAverage.stringValue
-        
-        DispatchQueue.main.async {
-            cell.posterImage?.image = UIImage(data: currentMovie?.imageData ?? Data())
-        }
+        cell.voteAverageLabel?.text = currentMovie?.voteAverage .stringValue
+        cell.posterImage?.image = UIImage(data: currentMovie?.imageData ?? Data())
         
         return cell
     }
